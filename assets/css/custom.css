@@ -1,0 +1,13 @@
+.entry:not(:first-of-type) {
+	margin-top: 10px;
+}
+
+.reds {
+	color: red;
+}
+
+.content-padding {
+	padding: 10px;
+	overflow: hidden;
+	/* minds inside and outside floatting elements, fine if no size given */
+}

@@ -42,11 +42,11 @@
                 <button class="btn btn-warning float-right buka">Buka Opsi</button>
             </div>
             <div class="col-md" >
-            <legend class="text-center border-bottom border-info"><b>Suku Bunga Simpanan</b></legend>
+            <legend class="text-center border-bottom border-info"><b>Rasio KPMM</b></legend>
                 <!-- <h4 class="text-center">Suku Bunga Simpanan</h4> -->
-                <h1 class="text-center" style="font-size:42px"><b>16</b> % 
+                <h1 class="text-center" style="font-size:42px"><b>2</b> % 
                     <span class="float-right">
-                        <a href="<?= base_url('responden/a22')?>" class="btn btn-primary nexts" style="display:none">Next <i class="fa fa-arrow-circle-right ml-2"></i></a>
+                        <a href="#" class="btn btn-warning nexts" data-toggle="modal" data-target="#exampleModal" style="display:none">Selesai <i class="fa fa-arrow-circle-right ml-2"></i></a>
                     </span>
                 </h1>
                 <span class="text-danger"><b>*</b> Pelajari Petunjuk sebelum membuka opsi</span><br>
@@ -60,6 +60,23 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informasi</h5>
+      </div>
+      <div class="modal-body">
+        <h4>Terimakasih...! Semua Form Sudah Terisi</h4>
+
+      </div>
+      <div class="modal-footer">
+        <a href="<?= base_url()?>"class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 

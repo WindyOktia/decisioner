@@ -42,11 +42,11 @@
                 <button class="btn btn-warning float-right buka">Buka Opsi</button>
             </div>
             <div class="col-md" >
-            <legend class="text-center border-bottom border-info"><b>Suku Bunga Simpanan</b></legend>
+            <legend class="text-center border-bottom border-info"><b>Rasio KPMM</b></legend>
                 <!-- <h4 class="text-center">Suku Bunga Simpanan</h4> -->
-                <h1 class="text-center" style="font-size:42px"><b>16</b> % 
+                <h1 class="text-center" style="font-size:42px"><b>4</b> % 
                     <span class="float-right">
-                        <a href="<?= base_url('responden/a22')?>" class="btn btn-primary nexts" style="display:none">Next <i class="fa fa-arrow-circle-right ml-2"></i></a>
+                        <a href="<?= base_url('responden/c9')?>" class="btn btn-primary nexts" style="display:none">Next <i class="fa fa-arrow-circle-right ml-2"></i></a>
                     </span>
                 </h1>
                 <span class="text-danger"><b>*</b> Pelajari Petunjuk sebelum membuka opsi</span><br>

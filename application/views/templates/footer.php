@@ -228,14 +228,6 @@
 			$(".sah_lanjut1").hide();
 			$(".sah_lanjut2").show();
 		});
-
-		$(".sah_lanjut2").click(function(){
-			$("#sah1").hide(300);
-			$("#sah2").hide(300);
-			$(".semua").show(300);
-			$(".sah_lanjut2").hide();
-			$("#submis").delay(300).fadeIn();
-		}); 
 		$(".semua").click(function(){
 			$("#sah1").show(300);
 			$("#sah2").show(300);
@@ -303,16 +295,6 @@
 			$(".intro_lanjut2").hide();
 			$(".intro_selesai").show();
 		});
-		
-		$(".intro_selesai").click(function(){
-			$("#intro_1").hide(300);
-			$("#intro_2").hide(300);
-			$("#intro_3").hide(300);
-			$(".intro_selesai").hide(300);
-			$(".semua_3").show(300);
-			$("#submission_3").delay(300).fadeIn(400);
-			$("#show_opsi_3").delay(2800).fadeIn();
-		});
 
 		$(".semua_3").click(function(){
 			$("#intro_1").show(300);
@@ -347,20 +329,7 @@
 	<!-- end of eks 3 -->
 
 	<!-- eksperimen 4 -->
-	<script type="text/javascript">
-		$(function(){
-    		function refreshDiv(){
-        	$.ajax({
-            	url: '<?= base_url('responden/refresh')?>'
-        		}).done(function(result) {
-            		$('#refreshdata').text(result);
-            		window.setTimeout(refreshDiv, 5000);
-        		});
-
-    			}
-				window.setTimeout(refreshDiv, 5000);
-		});
-	</script>
+	
 	<!-- end of eks 4 -->
 
 	
@@ -390,99 +359,8 @@
 			}
 		});
 	</script>
-	<script type="text/javascript">
-		var ctx8 = document.getElementById('jajals_4').getContext('2d');
-		var jajals_4 = new Chart(ctx8, {
-			type: 'pie',
-			data: {
-				labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
-				datasets: [{
-					label: '% of Votes',
-					data: [12, 19],
-					backgroundColor: [
-						'#0094C6',
-						'#E4572E'
-					],
-					borderWidth: 2
-				}]
-			},
-			options: {
-				legend: {
-					position: 'right',
-					labels: {
-						fontColor: "black"
-					}
-				}
-			}
-		});
-	</script>
-	<script type="text/javascript">
-		var val1 = document.getElementById('val1').value;
-		var val2 = document.getElementById('val2').value;
-		var ctx9 = document.getElementById('jajals_5').getContext('2d');
-		var jajals_5 = new Chart(ctx9, {
-			type: 'pie',
-			data: {
-				labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
-				datasets: [{
-					label: '% of Votes',
-					data: [1, 1],
-					backgroundColor: [
-						'#0094C6',
-						'#E4572E'
-					],
-					borderWidth: 2
-				}]
-			},
-			options: {
-				legend: {
-					position: 'right',
-					labels: {
-						fontColor: "black"
-					}
-				}
-			}
-		});
-
-		
-		$(function(){
-    		function refreshVal1(){
-        	$.ajax({
-            	url: '<?= base_url('responden/refreshBank')?>'
-        		}).done(function(results) {
-					$('#val1').val(results);
-					val1s=$('#val1').val()
-					val2s=$('#val2').val()
-					addData(jajals_5, [val1s, val2s], 0);
-            		window.setTimeout(refreshVal1, 5000);
-        		});
-
-    			}
-				window.setTimeout(refreshVal1, 5000);
-		});
-
-		$(function(){
-    		function refreshVal2(){
-        	$.ajax({
-            	url: '<?= base_url('responden/refreshBank2')?>'
-        		}).done(function(resultsd) {
-					$('#val2').val(resultsd);
-					val1s=$('#val1').val()
-					val2s=$('#val2').val()
-					addData(jajals_5, [val1s, val2s], 0);
-					window.setTimeout(refreshVal2, 5000);
-        		});
-
-    			}
-				window.setTimeout(refreshVal2, 5000);
-		});
-
-		function addData(chart, data, datasetIndex) {
-   		chart.data.datasets[datasetIndex].data = data;
-   		chart.update();
-		}
-
-	</script>
+	
+	
 </body>
 
 <!-- Mirrored from demo.interface.club/limitless/demo/Template/layout_1/LTR/default/full/uploader_bootstrap.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Nov 2019 15:23:58 GMT -->

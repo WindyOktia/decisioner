@@ -1,4 +1,4 @@
-<div id="uji3_saham">
+<!-- <div id="uji3_saham">
     <div class="alert alert-info clearfix">
         <h4 id="refreshdata">Tunggu hingga tombol aksi muncul di layar komputer anda</h4>
     </div>
@@ -58,4 +58,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

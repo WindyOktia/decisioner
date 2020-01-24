@@ -98,6 +98,62 @@ class Responden extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function a22()
+    {
+        $data['page']='grupA';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_1/12');
+        $this->load->view('templates/footer');
+    }
+
+    public function a23()
+    {
+        $data['page']='grupA';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_1/13');
+        $this->load->view('templates/footer');
+    }
+
+    public function a24()
+    {
+        $data['page']='grupA';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_1/14');
+        $this->load->view('templates/footer');
+    }
+
+    public function a25()
+    {
+        $data['page']='grupA';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_1/15');
+        $this->load->view('templates/footer');
+    }
+
+    public function a26()
+    {
+        $data['page']='grupA';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_1/16');
+        $this->load->view('templates/footer');
+    }
+
+    public function a27()
+    {
+        $data['page']='grupA';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_1/17');
+        $this->load->view('templates/footer');
+    }
+
+    public function a28()
+    {
+        $data['page']='grupA';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_1/18');
+        $this->load->view('templates/footer');
+    }
+
     public function b()
     {
         $data['page']='grupB';
@@ -106,10 +162,75 @@ class Responden extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function act_B()
+    public function b1()
     {
         $data['page']='grupB';
         $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/1');
+        $this->load->view('templates/footer');
+    }
+
+    public function b2()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/2');
+        $this->load->view('templates/footer');
+    }
+
+    public function b3()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/3');
+        $this->load->view('templates/footer');
+    }
+
+    public function b4()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/4');
+        $this->load->view('templates/footer');
+    }
+
+    public function b5()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/5');
+        $this->load->view('templates/footer');
+    }
+
+    public function b6()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/6');
+        $this->load->view('templates/footer');
+    }
+
+    public function b7()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/7');
+        $this->load->view('templates/footer');
+    }
+
+    public function b8()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/8');
+        $this->load->view('templates/footer');
+    }
+
+    public function b9()
+    {
+        $data['page']='grupB';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_2/9');
         $this->load->view('templates/footer');
     }
 
@@ -121,10 +242,83 @@ class Responden extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function act_C()
+    public function c1()
     {
         $data['page']='grupC';
         $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/1');
+        $this->load->view('templates/footer');
+    }
+
+    public function c2()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/2');
+        $this->load->view('templates/footer');
+    }
+
+    public function c3()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/3');
+        $this->load->view('templates/footer');
+    }
+
+    public function c4()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/4');
+        $this->load->view('templates/footer');
+    }
+
+    public function c5()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/5');
+        $this->load->view('templates/footer');
+    }
+
+    public function c6()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/6');
+        $this->load->view('templates/footer');
+    }
+
+    public function c7()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/7');
+        $this->load->view('templates/footer');
+    }
+
+    public function c8()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/8');
+        $this->load->view('templates/footer');
+    }
+
+    public function c9()
+    {
+        $data['page']='grupC';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_3/9');
+        $this->load->view('templates/footer');
+    }
+
+    public function d()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('res_eks_4/1');
         $this->load->view('templates/footer');
     }
 
@@ -142,11 +336,14 @@ class Responden extends CI_Controller
         echo(rand(10,100));
     }
 
-    public function d()
+    public function refreshBank3()
     {
-        $data['page']='grupD';
-        $this->load->view('templates/header_res',$data);
-        $this->load->view('responden/saham');
-        $this->load->view('templates/footer');
+        echo(rand(10,100));
     }
+    public function refreshBank4()
+    {
+        echo(rand(10,100));
+    }
+
+    
 }

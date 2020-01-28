@@ -30,15 +30,15 @@
                 <legend>Indeks</legend>
                 <div class="row">
                     <div class="col">
-                        <h4>Suku Bunga Simpanan :</h4>
+                        <h4>Prospek Kerugian :</h4>
                     </div>
                     <div class="col mx-auto my-auto">
-                        <h1 style="font-size:42px" class="text-warning"><b>6 %</b></h1>
+                        <h1 style="font-size:42px" class="text-warning"><b>5000</b></h1>
                     </div>
                 </div>
             </div>
             <div class="col-md ">   
-                <legend>Keputusan Anda : <span id="jawab_ref_3">Belum Memilih</span><span><a href="<?= base_url('responden/d2')?>" class="float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span></legend>
+                <legend>Keputusan Anda : <span id="jawab_ref_3">Belum Memilih</span><span><a href="#" data-toggle="modal" data-target="#exampleModal" class="float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span></legend>
                 <div class="col-12">
                     <form action="" method="post">
                         <button class="btn btn-danger btn-block tarik_ref_4 show_opsi_4" disabled>Menjual Saham</button>
@@ -50,6 +50,22 @@
     </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informasi</h5>
+      </div>
+      <div class="modal-body">
+        <h4>Terimakasih...! Semua Form Sudah Terisi</h4>
+
+      </div>
+      <div class="modal-footer">
+        <a href="<?= base_url()?>"class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script type="text/javascript">

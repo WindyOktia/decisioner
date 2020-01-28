@@ -325,6 +325,20 @@
 			$(".tarik_ref_3").prop('disabled', false);
 			$(".t-tarik_ref_3").prop('disabled', true);
 		});
+
+		$('.tarik_ref_4').click(function() {
+			$('#jawab_ref_3').html('<b>Menjual Saham</b>');
+			$('.next_ref_3').show();
+			$(".tarik_ref_4").prop('disabled', true);
+			$(".t-tarik_ref_4").prop('disabled', false);
+		});
+
+		$('.t-tarik_ref_4').click(function() {
+			$('#jawab_ref_3').html('<b>Tidak Menjual Saham</b>');
+			$('.next_ref_3').show();
+			$(".tarik_ref_4").prop('disabled', false);
+			$(".t-tarik_ref_4").prop('disabled', true);
+		});
 	</script>
 	<!-- end of eks 3 -->
 

@@ -1,3 +1,5 @@
+<div class="alert alert-warning" id="alert"><span id="status">Tunggu Sampai Responden Selesai Mengisi</span></div>
+
 
 <div class="card" id="submission_4" >
     <div class="card-body">
@@ -23,31 +25,15 @@
                 <canvas id="jajals_6" width="" height=""></canvas>
             </div>
         </div>
-        <div class="row mt-3" id="show_opsi_4" style="display: none;">
+        <div class="row mt-3" id=""  >
             <div class="col-md">
                 <legend>Indeks</legend>
                 <div class="row">
                     <div class="col">
-                        <h4>Suku Bunga Simpanan</h4>
+                        <h4>Suku Bunga Simpanan :</h4>
                     </div>
                     <div class="col mx-auto my-auto">
-                        <h4><b>: 6 %</b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <h4>Suku Bunga LPS</h4>
-                    </div>
-                    <div class="col mx-auto my-auto">
-                        <h4><b>: 6 %</b></h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <h4>Rasio KPMM</h4>
-                    </div>
-                    <div class="col mx-auto my-auto">
-                        <h4><b>: 8 %</b></h4>
+                        <h1 style="font-size:42px" class="text-warning"><b>6 %</b></h1>
                     </div>
                 </div>
             </div>
@@ -55,8 +41,8 @@
                 <legend>Keputusan Anda : <span id="jawab_ref_3">Belum Memilih</span><span><a href="#" class="float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span></legend>
                 <div class="col-12">
                     <form action="" method="post">
-                        <button class="btn btn-danger btn-block tarik_ref_3">Menarik Tabungan</button>
-                        <button class="btn btn-primary btn-block t-tarik_ref_3">Tidak Menarik Tabungan</button>
+                        <button class="btn btn-danger btn-block tarik_ref_3 show_opsi_4" disabled>Menarik Tabungan</button>
+                        <button class="btn btn-primary btn-block t-tarik_ref_3 show_opsi_4" disabled>Tidak Menarik Tabungan</button>
                     </form>
                 </div>
             </div>
@@ -64,22 +50,6 @@
     </div>
 </div>
 
-
-
-<!-- <script type="text/javascript">
-    $(function(){
-        function refreshDiv(){
-        $.ajax({
-            url: '<?= base_url('responden/refresh')?>'
-            }).done(function(result) {
-                $('#refreshdata').text(result);
-                window.setTimeout(refreshDiv, 5000);
-            });
-
-            }
-            window.setTimeout(refreshDiv, 5000);
-    });
-</script> -->
 
 <script type="text/javascript">
     var ctx8 = document.getElementById('jajals_4').getContext('2d');
@@ -89,7 +59,7 @@
             labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
             datasets: [{
                 label: '% of Votes',
-                data: [12, 19],
+                data: [80, 20],
                 backgroundColor: [
                     '#0094C6',
                     '#E4572E'
@@ -196,6 +166,21 @@
 
 <script type="text/javascript">
     
+    $(function(){
+        function refreshStat(){
+        $.ajax({
+            url: '<?= base_url('responden/refresh')?>'
+            }).done(function(refresh) {
+                $("#alert").removeClass("alert-warning");
+                $("#alert").addClass("alert-success");
+                $('#status').html(refresh);
+                $('.show_opsi_4').prop('disabled',false);
+            });
+
+            }
+            window.setTimeout(refreshStat, 5000);
+    });
+
     $(function(){
         function refreshVal1(){
         $.ajax({

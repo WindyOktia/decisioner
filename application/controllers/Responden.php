@@ -10,6 +10,21 @@ class Responden extends CI_Controller
         $this->load->view('templates/footer');
     }
 
+    public function general_insert_eks1()
+    {
+
+    }
+
+    public function general_insert_eks2()
+    {
+
+    }
+
+    public function general_insert_eks3()
+    {
+
+    }
+
     public function a1()
     {
         $data['page']='grupA';
@@ -329,11 +344,11 @@ class Responden extends CI_Controller
 
     public function refreshBank()
     {
-        echo(rand(10,100));
+        echo(rand(75,100));
     }
     public function refreshBank2()
     {
-        echo(rand(10,100));
+        echo(rand(0,25));
     }
 
     public function refreshBank3()

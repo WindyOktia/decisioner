@@ -62,9 +62,28 @@
     </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <h5 class="modal-title text-danger mb-2" id="exampleModalLabel">Informasi</h5>
+      <h4>Pengujian Selanjutnya adalah menggunakan indeks Rasio KPMM</h4>
+      <h4>Semakin Kecil Rasio KPMM, menandakan bahwa Bank sedang mengalami kesulitan likuiditas</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#exampleModal').modal('show');
+    });
+
     $('.buka').click(function() {
         $('.stay').show(300);
         $('.buka').hide(300);

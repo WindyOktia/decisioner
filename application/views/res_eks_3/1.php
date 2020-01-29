@@ -51,11 +51,11 @@
                 </h1>
                 <span class="text-danger"><b>*</b> Pelajari Petunjuk sebelum membuka opsi</span><br>
                 <span>Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
-                <button id="11" class="btn btn-primary btn-block stay" style="display:none">Tarik Tabungan</button>
+                <button id="11" class="btn btn-success btn-block stay" style="display:none">Tarik Tabungan</button>
                 <button id="12" class="btn btn-danger btn-block stay" style="display:none">Tidak Menarik Tabungan</button>
                 <br>
                 <span class="delay" style="display:none">> Opsi 2</span>
-                <button id='13' class="btn btn-primary btn-block delay" style="display:none">Tarik Tabungan</button>
+                <button id='13' class="btn btn-success btn-block delay" style="display:none">Tarik Tabungan</button>
                 <button id='14' class="btn btn-danger btn-block delay" style="display:none">Tidak Menarik Tabungan</button>
             </div>
         </div>
@@ -124,9 +124,9 @@
             labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
             datasets: [{
                 label: '% of Votes',
-                data: [12, 19],
+                data: [82, 18],
                 backgroundColor: [
-                    '#0094C6',
+                    '#4CAF50',
                     '#E4572E'
                 ],
                 borderWidth: 2

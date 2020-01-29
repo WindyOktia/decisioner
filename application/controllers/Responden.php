@@ -225,30 +225,6 @@ class Responden extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function b7()
-    {
-        $data['page']='grupB';
-        $this->load->view('templates/header_res',$data);
-        $this->load->view('res_eks_2/7');
-        $this->load->view('templates/footer');
-    }
-
-    public function b8()
-    {
-        $data['page']='grupB';
-        $this->load->view('templates/header_res',$data);
-        $this->load->view('res_eks_2/8');
-        $this->load->view('templates/footer');
-    }
-
-    public function b9()
-    {
-        $data['page']='grupB';
-        $this->load->view('templates/header_res',$data);
-        $this->load->view('res_eks_2/9');
-        $this->load->view('templates/footer');
-    }
-
     public function c()
     {
         $data['page']='grupC';

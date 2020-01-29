@@ -41,8 +41,8 @@
                 <legend>Keputusan Anda : <span id="jawab_ref_3">Belum Memilih</span><span><a href="<?= base_url('responden/d2')?>" class="float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span></legend>
                 <div class="col-12">
                     <form action="" method="post">
-                        <button class="btn btn-danger btn-block tarik_ref_4 show_opsi_4" disabled>Menjual Saham</button>
-                        <button class="btn btn-primary btn-block t-tarik_ref_4 show_opsi_4" disabled>Tidak Menjual Saham</button>
+                        <button class="btn btn-success btn-block tarik_ref_4 show_opsi_4" disabled>Menjual Saham</button>
+                        <button class="btn btn-danger btn-block t-tarik_ref_4 show_opsi_4" disabled>Tidak Menjual Saham</button>
                     </form>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                 label: '% of Votes',
                 data: [80, 20],
                 backgroundColor: [
-                    '#0094C6',
+                    '#4CAF50',
                     '#E4572E'
                 ],
                 borderWidth: 2
@@ -86,7 +86,7 @@
                 label: '% of Votes',
                 data: [12, 19],
                 backgroundColor: [
-                    '#0094C6',
+                    '#4CAF50',
                     '#E4572E'
                 ],
                 borderWidth: 2
@@ -117,7 +117,7 @@
                 label: '% of Votes',
                 data: [1, 1],
                 backgroundColor: [
-                    '#0094C6',
+                    '#4CAF50',
                     '#E4572E'
                 ],
                 borderWidth: 2

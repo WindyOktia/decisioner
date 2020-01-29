@@ -20,7 +20,7 @@
         <form method="post">
             <h2 style="text-align:center">Login</h2>
             <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" /></div>
+            <div class="form-group"><input class="form-control" type="text" name="email" placeholder="Username" /></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" /></div>
             <div class="form-group">
               <a href="<?= base_url('admin')?>" class="btn btn-primary btn-block">Admin</a>

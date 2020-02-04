@@ -16,7 +16,7 @@
             anda diminta untuk mengambil keputusan <b>"Menjual"</b> atau <b>"Menahan"</b> saham.
         </h4>
         <a href="#" class="btn btn-danger float-right sah_lanjut1">Selanjutnya</a>
-        <a href="<?= base_url('responden/b1')?>" class="btn btn-danger float-right sah_lanjut2"  style="display:none">Mulai</a>
+        <a href="<?= base_url('responden/d')?>" class="btn btn-danger float-right sah_lanjut2"  style="display:none">Mulai</a>
     </div>
 </div>
 

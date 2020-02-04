@@ -33,13 +33,15 @@
   </div>
 </div>
 
+<div class="alert alert-danger mt-2" id="status">Tunggu hingga Responden selesai mengisi</div>
+
 <div class="card" id="submission2">
     <div class="card-body">
         <div class="row">
             <div class="col-md">
             <legend><b>Presentase Keputusan Referensi</b></legend>
-                <canvas id="jajals" width="400" height="200"></canvas>
-                <button class="btn btn-warning float-right buka">Buka Opsi</button>
+                <canvas id="jajals" width="600" height="350"></canvas>
+                <!-- <button class="btn btn-warning float-right buka">Buka Opsi</button> -->
             </div>
             <div class="col-md" >
             <legend class="text-center border-bottom border-info"><b>Suku Bunga Simpanan</b></legend>
@@ -49,14 +51,21 @@
                         <a href="<?= base_url('responden/a21')?>" class="btn btn-primary nexts" style="display:none">Next <i class="fa fa-arrow-circle-right ml-2"></i></a>
                     </span>
                 </h1>
-                <span class="text-danger"><b>*</b> Pelajari Petunjuk sebelum membuka opsi</span><br>
-                <span>Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
-                <button id="11" class="btn btn-primary btn-block stay" style="display:none">Tarik Tabungan</button>
-                <button id="12" class="btn btn-danger btn-block stay" style="display:none">Tidak Menarik Tabungan</button>
+                <!-- <span class="text-danger"><b>*</b> Pelajari Petunjuk sebelum membuka opsi</span><br> -->
+                <div class="text-center">
+                    <span class="">Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
+                </div>
+                <div class="text-center mt-3">
+                    <button id="11" class="btn btn-primary  stay" disabled>Tarik Tabungan</button>
+                    <button id="12" class="btn btn-danger  stay" disabled>Tidak Menarik Tabungan</button>
+                </div>
                 <br>
-                <span class="delay" style="display:none">> Opsi 2</span>
-                <button id='13' class="btn btn-primary btn-block delay" style="display:none">Tarik Tabungan</button>
-                <button id='14' class="btn btn-danger btn-block delay" style="display:none">Tidak Menarik Tabungan</button>
+                <!-- <span class="delay" >> Opsi 2</span> -->
+                <legend class="text-center">Opsi 2 ( apabila opsi 1 sudah tidak bisa diklik )</legend>
+                <div class="text-center">
+                    <button id='13' class="btn btn-primary delay" disabled>Tarik Tabungan</button>
+                    <button id='14' class="btn btn-danger delay" disabled>Tidak Menarik Tabungan</button>
+                </div>
             </div>
         </div>
     </div>
@@ -79,19 +88,48 @@
 
 
 <script type="text/javascript">
-    $('.buka').click(function() {
-        $('.stay').show(300);
-        $('.buka').hide(300);
-        delays = setTimeout(function () {
-            $('.delay').show(300);
-        }, 10000);
+    $(function(){
+        function refreshStat(){
+        $.ajax({
+            url: '<?= base_url('responden/refresh')?>'
+            }).done(function(refresh) {
+                $("#status").removeClass("alert-danger");
+                $("#status").addClass("alert-success");
+                $('#status').html('Silahkan Mengisi');
+                $('.to_open').prop('disabled',false);
+                show();
+            });
 
-        var $elt = $('.stay').attr('disabled', false);
+            }
+        window.setTimeout(refreshStat, 5000);
 
-        cancel = setTimeout(function () {
-            $elt.attr('disabled', true);
-        }, 5000);
+        function show(){
+            $('.stay').show(300);
+            $('.buka').hide(300);
+            delays = setTimeout(function () {
+                $('.delay').prop('disabled',false);
+            }, 10000);
+
+            var $elt = $('.stay').attr('disabled', false);
+
+            cancel = setTimeout(function () {
+                $elt.attr('disabled', true);
+            }, 5000);
+        }
     });
+    // $('.buka').click(function() {
+    //     $('.stay').show(300);
+    //     $('.buka').hide(300);
+    //     delays = setTimeout(function () {
+    //         $('.delay').show(300);
+    //     }, 10000);
+
+    //     var $elt = $('.stay').attr('disabled', false);
+
+    //     cancel = setTimeout(function () {
+    //         $elt.attr('disabled', true);
+    //     }, 5000);
+    // });
     $('#11').click(function() {
         clearTimeout(delays);
         clearTimeout(cancel);
@@ -142,7 +180,7 @@
             labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
             datasets: [{
                 label: '% of Votes',
-                data: [12, 19],
+                data: [82, 18],
                 backgroundColor: [
                     '#0094C6',
                     '#E4572E'
@@ -152,7 +190,7 @@
         },
         options: {
             legend: {
-                position: 'right',
+                position: 'top',
                 labels: {
                     fontColor: "black"
                 }

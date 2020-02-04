@@ -88,7 +88,7 @@
 					</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
-						<a href="<?= base_url()?>" target="_blank" class="dropdown-item"><i class="fa fa-grav"></i> Your Page</a>
+						<!-- <a href="<?= base_url()?>" target="_blank" class="dropdown-item"><i class="fa fa-grav"></i> Your Page</a> -->
 						<a href="<?= base_url()?>" class="dropdown-item"><i class="fa fa-external-link"></i> Logout</a>
 					</div>
 				</li>
@@ -126,28 +126,36 @@
 
 						<!-- Main -->
 						<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Menu</div> <i class="icon-menu" title="Main"></i></li>
-						<li class="nav-item">
-							<a href="<?= base_url('responden')?>" class="nav-link <?php if($page=='grupA'){echo 'active';};?>">
+						<!-- <li class="nav-item">
+							<a href="<?= base_url('responden/ref')?>" class="nav-link <?php if($page=='ref'){echo 'active';};?>">
 								<i class="fa fa-users"></i>
-								<span>Eksperimen 1</span>
+								<span>Referensi </span>
 							</a>
-						</li>
-						<li class="nav-item">
+						</li> -->
+						
+						<!-- <li class="nav-item">
 							<a href="<?= base_url('responden/b')?>" class="nav-link <?php if($page=='grupB'){echo 'active';};?>">
 								<i class="fa fa-users"></i>
 								<span>Eksperimen 2</span>
 							</a>
-						</li>
-						<li class="nav-item">
+						</li> -->
+						<!-- <li class="nav-item">
 							<a href="<?= base_url('responden/c')?>" class="nav-link <?php if($page=='grupC'){echo 'active';};?>">
 								<i class="fa fa-users"></i>
 								<span>Eksperimen 3 - Perbankan</span>
 							</a>
-						</li>
+						</li> -->
 						<li class="nav-item">
-							<a href="<?= base_url('responden/d')?>" class="nav-link <?php if($page=='grupD'){echo 'active';};?>">
+							<a href="<?= base_url('responden/d0')?>" class="nav-link <?php if($page=='grupD'){echo 'active';};?>">
 								<i class="fa fa-users"></i>
-								<span>Eksperimen 3 - Saham</span>
+								<span>Saham</span>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a href="<?= base_url('responden/a0')?>" class="nav-link <?php if($page=='grupA'){echo 'active';};?>">
+								<i class="fa fa-users"></i>
+								<span>Bank</span>
 							</a>
 						</li>
 

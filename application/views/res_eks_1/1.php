@@ -15,10 +15,12 @@
 <div class="collapse" id="cs2">
   <div class="card card-body">
     <ol>
-        <li>Untuk setiap perubahan suku bunga berikut anda diminta untuk mengambil keputusan <b>"Menarik Tabungan"</b> atau <b>"Tidak Menarik Tabungan"</li>
+        <li>Untuk setiap perubahan suku bunga berikut anda diminta untuk mengambil keputusan <b>"Menarik Tabungan"</b> atau <b>"Tidak Menarik Tabungan"</b></li>
     </ol>
   </div>
 </div>
+
+<div class="alert alert-danger mt-2" id="status">Tunggu sampai kelompok saham selesai mengisi</div>
 
 <div class="card mt-2" id="eks_1">
     <div class="card-body">
@@ -37,10 +39,10 @@
                     <th>
                         <div class="row">
                             <div class="col-md">
-                                <button class="btn btn-success btn-block tt_1_1">Tarik Tabungan</button>
+                                <button class="btn btn-success btn-block tt_1_1 to_open" disabled>Tarik Tabungan</button>
                             </div>
                             <div class="col-md">
-                                <button class="btn btn-danger btn-block tmt_1_1">Tidak Menarik Tabungan</button>
+                                <button class="btn btn-danger btn-block tmt_1_1 to_open" disabled>Tidak Menarik Tabungan</button>
                             </div>
                         </div>
                     </th>
@@ -66,4 +68,23 @@
         $(".tt_1_1").prop('disabled', false);
         $(".tmt_1_1").prop('disabled', true);
     });
+</script>
+
+<script type="text/javascript">
+    
+    $(function(){
+        function refreshStat(){
+        $.ajax({
+            url: '<?= base_url('responden/refresh')?>'
+            }).done(function(refresh) {
+                $("#status").removeClass("alert-danger");
+                $("#status").addClass("alert-success");
+                $('#status').html('Silahkan Mengisi');
+                $('.to_open').prop('disabled',false);
+            });
+
+            }
+            window.setTimeout(refreshStat, 15000);
+    });
+
 </script>

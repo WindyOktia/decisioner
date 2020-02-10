@@ -17,12 +17,33 @@
 </div>
 <div class="collapse" id="cs2">
   <div class="card card-body">
-    <ol>
-        <li>Untuk setiap perubahan suku bunga berikut anda diminta untuk mengambil keputusan <b>"Menarik Tabungan"</b> atau <b>"Tidak Menarik Tabungan"</b></li>
-        <li>Amati Keputusan Kelompok Referensi, dan apabila anda sudah siap untuk mengisi data maka klik tombol buka opsi</li>
-        <li>Anda memiliki kesempatan <b>2,5 </b> detik untuk langsung memilih pada kemunculan opsi pertama setelah anda membuka opsi</li>
-        <li>atau Anda dapat kembali mepertimbangan keputusan anda dengan menunggu kemunculan opsi kedua</li>
-    </ol>
+  <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
+      <legend>informasi</legend>
+      <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
+      <legend>Petunjuk</legend>
+      <ul>
+        <li>
+            <h4>Anda diminta untuk menunggu hingga responden selesai mengisi</h4>
+        </li>
+        <li>
+            <h4><b>Kesempatan anda untuk menjawab pada opsi pertama adalah 2,5 detik</b></h4>
+        </li>
+        <li>
+            <h4>Anda dapat melewati opsi pertama dan menunggu hingga opsi kedua muncul</h4>
+        </li>
+      </ul>
+      <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
+        <ul>
+            <li>
+                <a href="#" class="btn btn-success btn-sm">Jual Saham</a> untuk
+                <b>Menjual Saham</b> , atau
+            </li>
+            <li>
+                <a href="#" class="btn btn-sm btn-danger mt-2" >Tahan Saham</a> untuk
+                <b>Tidak Menjual Saham</b>
+            </li>
+        </ul>
+      </h4>
   </div>
 </div>
 <div class="collapse" id="cs3">
@@ -33,13 +54,18 @@
   </div>
 </div>
 
+<div class="alert alert-danger mt-2" id="status">Tunggu hingga Responden selesai mengisi</div>
+
+<input type="hidden" id="val1" value="3">
+<input type="hidden" id="val2" value="4">
+
 <div class="card" id="submission2">
     <div class="card-body">
         <div class="row">
             <div class="col-md">
             <legend><b>Presentase Keputusan Referensi</b></legend>
-                <canvas id="jajals" width="400" height="200"></canvas>
-                <button class="btn btn-warning float-right buka">Buka Opsi</button>
+                <canvas id="jajals" width="600" height="350"></canvas>
+                <!-- <button class="btn btn-warning float-right buka">Buka Opsi</button> -->
             </div>
             <div class="col-md" >
             <legend class="text-center border-bottom border-info"><b>Suku Bunga Simpanan</b></legend>
@@ -49,35 +75,85 @@
                         <a href="<?= base_url('responden/a23')?>" class="btn btn-primary nexts" style="display:none">Next <i class="fa fa-arrow-circle-right ml-2"></i></a>
                     </span>
                 </h1>
-                <span class="text-danger"><b>*</b> Pelajari Petunjuk sebelum membuka opsi</span><br>
-                <span>Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
-                <button id="11" class="btn btn-primary btn-block stay" style="display:none">Tarik Tabungan</button>
-                <button id="12" class="btn btn-danger btn-block stay" style="display:none">Tidak Menarik Tabungan</button>
+                <!-- <span class="text-danger"><b>*</b> Pelajari Petunjuk sebelum membuka opsi</span><br> -->
+                <div class="text-center">
+                    <span class="">Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
+                </div>
+                <div class="text-center mt-3">
+                    <button id="11" class="btn btn-primary  stay" disabled>Tarik Tabungan</button>
+                    <button id="12" class="btn btn-danger  stay" disabled>Tidak Menarik Tabungan</button>
+                </div>
                 <br>
-                <span class="delay" style="display:none">> Opsi 2</span>
-                <button id='13' class="btn btn-primary btn-block delay" style="display:none">Tarik Tabungan</button>
-                <button id='14' class="btn btn-danger btn-block delay" style="display:none">Tidak Menarik Tabungan</button>
+                <!-- <span class="delay" >> Opsi 2</span> -->
+                <legend class="text-center">Opsi 2 ( apabila opsi 1 sudah tidak bisa diklik )</legend>
+                <div class="text-center">
+                    <button id='13' class="btn btn-primary delay" disabled>Tarik Tabungan</button>
+                    <button id='14' class="btn btn-danger delay" disabled>Tidak Menarik Tabungan</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <h5 class="modal-title text-danger mb-2" id="exampleModalLabel">INSTRUKSI</h5>
+        <h4>Pada pengujian ini, anda dapat langsung menentukan keputusan pada <b>opsi pertama</b>, atau dapat menunggu hingga <b>opsi kedua</b> muncul</h4>
+        <h4>Pelajari Petunjuk sebelum membuka pilihan opsi</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
 
 
 <script type="text/javascript">
-    $('.buka').click(function() {
-        $('.stay').show(300);
-        $('.buka').hide(300);
-        delays = setTimeout(function () {
-            $('.delay').show(300);
-        }, 10000);
+    $(function(){
+        function refreshStat(){
+        $.ajax({
+            url: '<?= base_url('responden/refresh')?>'
+            }).done(function(refresh) {
+                $("#status").removeClass("alert-danger");
+                $("#status").addClass("alert-success");
+                $('#status').html('Silahkan Mengisi');
+                $('.to_open').prop('disabled',false);
+                show();
+            });
 
-        var $elt = $('.stay').attr('disabled', false);
+            }
+        window.setTimeout(refreshStat, 15000);
 
-        cancel = setTimeout(function () {
-            $elt.attr('disabled', true);
-        }, 5000);
+        function show(){
+            $('.stay').show(300);
+            $('.buka').hide(300);
+            delays = setTimeout(function () {
+                $('.delay').prop('disabled',false);
+            }, 10000);
+
+            var $elt = $('.stay').attr('disabled', false);
+
+            cancel = setTimeout(function () {
+                $elt.attr('disabled', true);
+            }, 5000);
+        }
     });
+    // $('.buka').click(function() {
+    //     $('.stay').show(300);
+    //     $('.buka').hide(300);
+    //     delays = setTimeout(function () {
+    //         $('.delay').show(300);
+    //     }, 10000);
+
+    //     var $elt = $('.stay').attr('disabled', false);
+
+    //     cancel = setTimeout(function () {
+    //         $elt.attr('disabled', true);
+    //     }, 5000);
+    // });
     $('#11').click(function() {
         clearTimeout(delays);
         clearTimeout(cancel);
@@ -114,6 +190,10 @@
         $(".nexts").show(300);
     });
 
+    $(window).on('load',function(){
+        $('#exampleModal').modal('show');
+    });
+
 </script>
 
 <script type="text/javascript">
@@ -124,7 +204,7 @@
             labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
             datasets: [{
                 label: '% of Votes',
-                data: [12, 19],
+                data: [1, 1],
                 backgroundColor: [
                     '#0094C6',
                     '#E4572E'
@@ -134,11 +214,51 @@
         },
         options: {
             legend: {
-                position: 'right',
+                position: 'top',
                 labels: {
                     fontColor: "black"
                 }
             }
         }
     });
+</script>
+
+<script type="text/javascript">
+    $(function(){
+        function refreshVal1(){
+        $.ajax({
+            url: '<?= base_url('responden/refreshBank')?>'
+            }).done(function(results) {
+                $('#val1').val(results);
+                val1s=$('#val1').val()
+                val2s=$('#val2').val()
+                addData(jajals_5, [val1s, val2s], 0);
+                window.setTimeout(refreshVal1, 3000);
+            });
+
+            }
+            window.setTimeout(refreshVal1, 3000);
+    });
+
+    $(function(){
+        function refreshVal2(){
+        $.ajax({
+            url: '<?= base_url('responden/refreshBank2')?>'
+            }).done(function(resultsd) {
+                $('#val2').val(resultsd);
+                val1s=$('#val1').val()
+                val2s=$('#val2').val()
+                addData(jajals, [val1s, val2s], 0);
+                window.setTimeout(refreshVal2, 3000);
+            });
+
+            }
+            window.setTimeout(refreshVal2, 3000);
+    });
+
+    function addData(chart, data, datasetIndex) {
+    chart.data.datasets[datasetIndex].data = data;
+    chart.update();
+    }
+
 </script>

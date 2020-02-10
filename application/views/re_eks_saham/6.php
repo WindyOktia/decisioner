@@ -7,15 +7,37 @@
 
 <div class="collapse" id="cs1">
   <div class="card card-body">
-  Anda adalah pemegang saham sebuah Bank dengan nilai investasi sebesar <b>50 juta rupiah</b>. Nilai per
-            lembar saham anda saat ini adalah <b>6500 Rupiah</b>. Perubahan tingkat Suku Bunga Simpanan, Suku Bunga LPS,
-            dan Rasio KPMM akan mempengaruhi tingkat pendapatan anda
+  <ul>
+    <li>
+    Anda adalah pemegang saham sebuah Bank dengan nilai Investasi sebesar <b>50 Juta Rupiah</b>. Nilai per lembar saham
+        bank anda saat ini adalah <b>6500 Rupiah</b>
+    </li>
+    <li>
+    Kenaikan tingkat Suku Bunga Simpanan, Suku Bunga LPS dan Rasio KPMM menunjukkan
+        bahwa Bank dalam keadaan kesulitan likuiditas, dan dapat mempengaruhi tingkat pendapatan anda, yang nampak melalui
+        prospek pendapatan positif dan pendapatan negatif
+    </li>
+  </ul>
   </div>
 </div>
 <div class="collapse" id="cs2">
   <div class="card card-body">
-  Untuk perubahan setiap Suku Bunga(dan parameter lainnya), beserta dengan prospek keuntungan dan kerugian
-            anda diminta untuk mengambil keputusan <b>"Menjual"</b> atau <b>"Menahan"</b> saham.
+  <h3><b>Pengujian Rasio KPMM</b></h3>
+      <legend>informasi</legend>
+      <h4>Setiap penurunan Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
+      <legend>Petunjuk</legend>
+      <h4>Untuk setiap penurunan Rasio KPMM, anda diminta untuk mengambil keputusan dengan menekan tombol:
+        <ul>
+            <li>
+                <a href="#" class="btn btn-success btn-sm">Jual Saham</a> untuk
+                <b>Menjual Saham</b> , atau
+            </li>
+            <li>
+                <a href="#" class="btn btn-sm btn-danger mt-2" >Tahan Saham</a> untuk
+                <b>Tidak Menjual Saham</b>
+            </li>
+        </ul>
+      </h4>
   </div>
 </div>
 
@@ -72,7 +94,7 @@
                 </tr>
             </tbody>
         </table>
-        <a href="<?= base_url('responden/d7')?>" type="button" onclick="return confirm('Yakin? Jawaban tidak dapat diubah setelah dikirim!');" class="btn btn-primary float-right mt-3 submit" style="display:none"><i class="fa fa-location-arrow mr-2"></i> Kirim Jawaban</a>
+        <a href="<?= base_url('responden/d6_1')?>" type="button" onclick="return confirm('Yakin? Jawaban tidak dapat diubah setelah dikirim!');" class="btn btn-primary float-right mt-3 submit" style="display:none"><i class="fa fa-location-arrow mr-2"></i> Kirim Jawaban</a>
     </div>
         <!-- <a href="<?= base_url('responden/b2')?>" onclick="return confirm('Yakin? Jawaban tidak dapat diubah setelah dikirim!');" class="btn btn-primary float-right mt-3 submit" style="display:none"><i class="fa fa-location-arrow mr-2"></i> Kirim Jawaban</a> -->
 </div>
@@ -81,9 +103,22 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-      <h5 class="modal-title text-danger mb-2" id="exampleModalLabel">INSTRUKSI</h5>
       <h3><b>Pengujian Rasio KPMM</b></h3>
-      <h4>Narasi</h4>
+      <legend>informasi</legend>
+      <h4>Setiap penurunan Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
+      <legend>Petunjuk</legend>
+      <h4>Untuk setiap penurunan Rasio KPMM, anda diminta untuk mengambil keputusan dengan menekan tombol:
+        <ul>
+            <li>
+                <a href="#" class="btn btn-success btn-sm">Jual Saham</a> untuk
+                <b>Menjual Saham</b> , atau
+            </li>
+            <li>
+                <a href="#" class="btn btn-sm btn-danger mt-2" >Tahan Saham</a> untuk
+                <b>Tidak Menjual Saham</b>
+            </li>
+        </ul>
+      </h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>

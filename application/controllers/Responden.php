@@ -385,6 +385,69 @@ class Responden extends CI_Controller
         $this->load->view('re_eks_saham/6');
         $this->load->view('templates/footer');
     }
+    public function d6_1()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_1');
+        $this->load->view('templates/footer');
+    }
+    public function d6_2()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_2');
+        $this->load->view('templates/footer');
+    }
+    public function d6_3()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_3');
+        $this->load->view('templates/footer');
+    }
+    public function d6_4()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_4');
+        $this->load->view('templates/footer');
+    }
+    public function d6_5()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_5');
+        $this->load->view('templates/footer');
+    }
+    public function d6_6()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_6');
+        $this->load->view('templates/footer');
+    }
+    public function d6_7()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_7');
+        $this->load->view('templates/footer');
+    }
+    public function d6_8()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_8');
+        $this->load->view('templates/footer');
+    }
+    public function d6_9()
+    {
+        $data['page']='grupD';
+        $this->load->view('templates/header_res',$data);
+        $this->load->view('re_eks_saham/6_9');
+        $this->load->view('templates/footer');
+    }
     public function d7()
     {
         $data['page']='grupD';

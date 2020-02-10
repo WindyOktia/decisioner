@@ -14,9 +14,22 @@
 </div>
 <div class="collapse" id="cs2">
   <div class="card card-body">
-    <ol>
-        <li>Untuk setiap perubahan suku bunga berikut anda diminta untuk mengambil keputusan <b>"Menarik Tabungan"</b> atau <b>"Tidak Menarik Tabungan"</li>
-    </ol>
+  <h3><b>Pengujian Rasio KPMM</b></h3>
+      <legend>Instruksi</legend>
+      <h4>Setiap penurunan Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
+      <legend>Petunjuk</legend>
+      <h4>Untuk setiap penurunan Rasio KPMM, anda diminta untuk mengambil keputusan dengan menekan tombol:
+        <ul>
+        <li>
+                <a href="#" class="btn btn-success btn-sm">Tarik Tabungan</a> untuk
+                <b>Menarik Tabungan</b> , atau
+            </li>
+            <li>
+                <a href="#" class="btn btn-sm btn-danger mt-2" >Tidak Menarik Tabungan</a> untuk
+                <b>Tidak Menarik Tabungan</b>
+            </li>
+        </ul>
+      </h4>
   </div>
 </div>
 
@@ -51,8 +64,37 @@
         <a href="<?= base_url('responden/a18')?>" onclick="return confirm('Yakin? Jawaban tidak dapat diubah setelah dikirim!');" class="btn btn-primary float-right mt-3 submit" style="display:none"><i class="fa fa-location-arrow mr-2"></i> Kirim Jawaban</a>
     </div>
 </div>
-
+<div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <h3><b>Pengujian Rasio KPMM</b></h3>
+      <legend>Instruksi</legend>
+      <h4>Setiap penurunan Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
+      <legend>Petunjuk</legend>
+      <h4>Untuk setiap penurunan Rasio KPMM, anda diminta untuk mengambil keputusan dengan menekan tombol:
+        <ul>
+        <li>
+                <a href="#" class="btn btn-success btn-sm">Tarik Tabungan</a> untuk
+                <b>Menarik Tabungan</b> , atau
+            </li>
+            <li>
+                <a href="#" class="btn btn-sm btn-danger mt-2" >Tidak Menarik Tabungan</a> untuk
+                <b>Tidak Menarik Tabungan</b>
+            </li>
+        </ul>
+      </h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
+ $(window).on('load',function(){
+        $('#modalShow').modal('show');
+    });
     $('.tt_1_1').click(function() {
         $("#jwb_1_1").html('<b> Menarik Tabungan </b>');
         $(".submit").show();

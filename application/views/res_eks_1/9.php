@@ -14,9 +14,22 @@
 </div>
 <div class="collapse" id="cs2">
   <div class="card card-body">
-    <ol>
-        <li>Untuk setiap perubahan suku bunga berikut anda diminta untuk mengambil keputusan <b>"Menarik Tabungan"</b> atau <b>"Tidak Menarik Tabungan"</li>
-    </ol>
+  <h3><b>Pengujian Rasio KPMM</b></h3>
+      <legend>Instruksi</legend>
+      <h4>Setiap penurunan Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
+      <legend>Petunjuk</legend>
+      <h4>Untuk setiap penurunan Rasio KPMM, anda diminta untuk mengambil keputusan dengan menekan tombol:
+        <ul>
+        <li>
+                <a href="#" class="btn btn-success btn-sm">Tarik Tabungan</a> untuk
+                <b>Menarik Tabungan</b> , atau
+            </li>
+            <li>
+                <a href="#" class="btn btn-sm btn-danger mt-2" >Tidak Menarik Tabungan</a> untuk
+                <b>Tidak Menarik Tabungan</b>
+            </li>
+        </ul>
+      </h4>
   </div>
 </div>
 

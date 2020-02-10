@@ -5,13 +5,13 @@
     <div class="card-body">
         <legend><b>REFERENSI</b></legend>
         <div class="row">
-            <div class="col-md">
-                <p>Referensi</p>
                 <input type="hidden" id="val1" value="3">
                 <input type="hidden" id="val2" value="4">
 
                 <input type="hidden" id="val3" value="3">
                 <input type="hidden" id="val4" value="4">
+            <div class="col-md">
+                <p>Referensi</p>
                 <canvas id="jajals_4" width="" height=""></canvas>
             </div>
             <span class="border"></span>
@@ -50,6 +50,23 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <h3><b>Pengujian dengan data indeks realtime</b></h3>
+      <legend>Instruksi</legend>
+      <h4>Pada pengujian ini, anda diminta untuk menunggu hingga responden referensi selesai membuat keputusan,
+      perhatikan keputusan responden hingga data siap untuk anda isi
+      </h4>
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script type="text/javascript">
@@ -166,7 +183,9 @@
 </script> -->
 
 <script type="text/javascript">
-    
+     $(window).on('load',function(){
+        $('#modalShow').modal('show');
+    });
     $(function(){
         function refreshStat(){
         $.ajax({

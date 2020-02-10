@@ -17,12 +17,33 @@
 </div>
 <div class="collapse" id="cs2">
   <div class="card card-body">
-    <ol>
-        <li>Untuk setiap perubahan suku bunga berikut anda diminta untuk mengambil keputusan <b>"Menarik Tabungan"</b> atau <b>"Tidak Menarik Tabungan"</b></li>
-        <li>Amati Keputusan Kelompok Referensi, dan apabila anda sudah siap untuk mengisi data maka klik tombol buka opsi</li>
-        <li>Anda memiliki kesempatan <b>2,5 </b> detik untuk langsung memilih pada kemunculan opsi pertama setelah anda membuka opsi</li>
-        <li>atau Anda dapat kembali mepertimbangan keputusan anda dengan menunggu kemunculan opsi kedua</li>
-    </ol>
+  <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
+      <legend>informasi</legend>
+      <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
+      <legend>Petunjuk</legend>
+      <ul>
+        <li>
+            <h4>Anda diminta untuk menunggu hingga responden selesai mengisi</h4>
+        </li>
+        <li>
+            <h4><b>Kesempatan anda untuk menjawab pada opsi pertama adalah 2,5 detik</b></h4>
+        </li>
+        <li>
+            <h4>Anda dapat melewati opsi pertama dan menunggu hingga opsi kedua muncul</h4>
+        </li>
+      </ul>
+      <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
+        <ul>
+            <li>
+                <a href="#" class="btn btn-success btn-sm">Jual Saham</a> untuk
+                <b>Menjual Saham</b> , atau
+            </li>
+            <li>
+                <a href="#" class="btn btn-sm btn-danger mt-2" >Tahan Saham</a> untuk
+                <b>Tidak Menjual Saham</b>
+            </li>
+        </ul>
+      </h4>
   </div>
 </div>
 <div class="collapse" id="cs3">
@@ -34,6 +55,9 @@
 </div>
 
 <div class="alert alert-danger mt-2" id="status">Tunggu hingga Responden selesai mengisi</div>
+
+<input type="hidden" id="val1" value="3">
+<input type="hidden" id="val2" value="4">
 
 <div class="card" id="submission2">
     <div class="card-body">
@@ -77,7 +101,7 @@
       <div class="modal-body">
       <h5 class="modal-title text-danger mb-2" id="exampleModalLabel">INSTRUKSI</h5>
         <h4>Pada pengujian ini, anda dapat langsung menentukan keputusan pada <b>opsi pertama</b>, atau dapat menunggu hingga <b>opsi kedua</b> muncul</h4>
-        <h4>Pelajari Petunjuk sebelum membuka pilihan opsi</h4>
+        <!-- <h4>Pelajari Petunjuk sebelum membuka pilihan opsi</h4> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>
@@ -101,7 +125,7 @@
             });
 
             }
-        window.setTimeout(refreshStat, 5000);
+        window.setTimeout(refreshStat, 15000);
 
         function show(){
             $('.stay').show(300);
@@ -180,7 +204,7 @@
             labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
             datasets: [{
                 label: '% of Votes',
-                data: [82, 18],
+                data: [1, 1],
                 backgroundColor: [
                     '#0094C6',
                     '#E4572E'
@@ -197,4 +221,44 @@
             }
         }
     });
+</script>
+
+<script type="text/javascript">
+    $(function(){
+        function refreshVal1(){
+        $.ajax({
+            url: '<?= base_url('responden/refreshBank')?>'
+            }).done(function(results) {
+                $('#val1').val(results);
+                val1s=$('#val1').val()
+                val2s=$('#val2').val()
+                addData(jajals_5, [val1s, val2s], 0);
+                window.setTimeout(refreshVal1, 3000);
+            });
+
+            }
+            window.setTimeout(refreshVal1, 3000);
+    });
+
+    $(function(){
+        function refreshVal2(){
+        $.ajax({
+            url: '<?= base_url('responden/refreshBank2')?>'
+            }).done(function(resultsd) {
+                $('#val2').val(resultsd);
+                val1s=$('#val1').val()
+                val2s=$('#val2').val()
+                addData(jajals, [val1s, val2s], 0);
+                window.setTimeout(refreshVal2, 3000);
+            });
+
+            }
+            window.setTimeout(refreshVal2, 3000);
+    });
+
+    function addData(chart, data, datasetIndex) {
+    chart.data.datasets[datasetIndex].data = data;
+    chart.update();
+    }
+
 </script>

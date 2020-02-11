@@ -16,7 +16,8 @@
   <div class="card card-body">
   <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
       <legend>Instruksi</legend>
-      <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
+      <h4>SSetiap kenaikan Suku Bunga Simpanan, maka simpanan Anda dalam keadaan tidak terjamin dan
+      Bank dalam keadaan kesulitan likuiditas</h4>
       <legend>Petunjuk</legend>
       <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>
@@ -74,7 +75,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <h4>Pengujian Selanjutnya adalah mengenai <b>Suku Bunga LPS</b></h4>
+        <h4>Pengujian Selanjutnya berkaitan dengan <b>Suku Bunga LPS</b></h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

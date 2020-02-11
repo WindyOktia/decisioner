@@ -1,5 +1,47 @@
-<div class="alert alert-warning" id="alert"><span id="status">Tunggu Sampai Responden Selesai Mengisi</span></div>
+<button class="btn btn-primary mb-1 btn-sm" type="button" data-toggle="collapse" data-target="#cs1" aria-expanded="false" aria-controls="cs1">
+    Informasi
+</button>
+<button class="btn btn-warning mb-1 btn-sm" type="button" data-toggle="collapse" data-target="#cs2" aria-expanded="false" aria-controls="cs2">
+    Petunjuk
+</button>
+<button class="btn btn-secondary mb-1 btn-sm" type="button" data-toggle="collapse" data-target="#cs3" aria-expanded="false" aria-controls="cs3">
+    Tentang Referensi
+</button>
+<div class="collapse" id="cs1">
+  <div class="card card-body">
+  Anda adalah pemegang saham Bank Y dengan nilai Investasi sebesar <b>50 Juta Rupiah</b>. Nilai per lembar saham
+                bank Anda saat ini adalah <b>6500 Rupiah</b>
+  </div>
+</div>
+<div class="collapse" id="cs2">
+  <div class="card card-body">
+  <h3><b>Pengujian Suku Bunga LPS</b></h3>
+        <legend>informasi</legend>
+        <h4>Data yang tersaji adalah data hasil pengambilan keputusan kelompok B, berkaitan dengan perubahan suku bunga LPS, berdasarkan hasil kelompok C, yaitu kelompok referensi</h4>
+        <legend>Petunjuk</legend>
+        <h4>Untuk setiap data yang tersaji, Anda diminta untuk mengambil keputusan dengan menekan tombol:
+            <ul>
+                <li>
+                    <a href="#" class="btn btn-success btn-sm">Menjual Saham</a> untuk
+                    <b>Menjual Saham</b> , atau
+                </li>
+                <li>
+                    <a href="#" class="btn btn-sm btn-danger mt-2" >Tidak Menjual Saham</a> untuk
+                    <b>Tidak Menjual Saham</b>
+                </li>
+            </ul>
+        </h4>
+  </div>
+</div>
+<div class="collapse" id="cs3">
+  <div class="card card-body">
+        Kelompok Referensi adalah pemilik simpanan dengan nominal diatas <b> 100 juta</b>,dan telah menyimpan uangnya di Bank selama
+        lebih dari <b>5 tahun</b>. Kelompok ini memiliki informasi lengkap mengenai kondisi fundamental perbankan, dan tidak pernah
+        salah mengambil keputusan
+  </div>
+</div>
 
+<div class="alert alert-warning mt-2" id="alert"><span id="status">Tunggu Sampai Responden Selesai Mengisi</span></div>
 
 <div class="card" id="submission_4" >
     <div class="card-body">

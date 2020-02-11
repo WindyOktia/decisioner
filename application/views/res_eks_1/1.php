@@ -16,7 +16,9 @@
   <div class="card card-body">
   <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
       <legend>Instruksi</legend>
-      <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
+      <h4>Setiap kenaikan Suku Bunga Simpanan, maka simpanan Anda dalam keadaan tidak terjamin dan
+      Bank dalam keadaan kesulitan likuiditas
+      </h4>
       <legend>Petunjuk</legend>
       <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>
@@ -73,7 +75,8 @@
       <div class="modal-body">
       <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
       <legend>Instruksi</legend>
-      <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
+      <h4>Setiap kenaikan Suku Bunga Simpanan, maka simpanan Anda dalam keadaan tidak terjamin dan
+      Bank dalam keadaan kesulitan likuiditas</h4>
       <legend>Petunjuk</legend>
       <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>

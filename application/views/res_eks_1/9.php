@@ -76,8 +76,8 @@
       <div class="modal-body">
         <div class="alert alert-warning">Pertimbangkan data Referensi untuk mengambil keputusan pada pengujian berikutnya</div>
         <h4>Kelompok Referensi adalah pemilik simpanan dengan nominal diatas <b>100 juta</b>, dan telah menyimpan uangnya di Bank selama
-        lebih dari <b>5 tahun</b>. Kelompok ini memiliki informasi lengkap mengenai kondisi fundamental perbankan, serta memiliki
-        kemampuan analisis perbankan yang baik</h4>
+        lebih dari <b>5 tahun</b>. Kelompok ini memiliki informasi lengkap mengenai kondisi fundamental perbankan, 
+        dan tidak pernah salah dalam mengambil keputusan</h4>
 
       </div>
       <div class="modal-footer">

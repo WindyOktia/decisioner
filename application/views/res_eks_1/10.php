@@ -10,7 +10,7 @@
 <div class="collapse" id="cs1">
   <div class="card card-body">
     <ol>
-        <li>Anda adalah Nasabah Bank Y,  yang memiliki jumlah simpanan sebesar <b>60 Juta rupiah</b>. Simpanan Anda memberikan tambahan pendapatan sebesar suku bunga berlaku</li>
+        <li>Anda adalah Nasabah Bank Y,  yang memiliki jumlah simpanan sebesar <b>50 Juta rupiah</b>. Simpanan Anda memberikan tambahan pendapatan sebesar suku bunga berlaku</li>
         <li>Setiap kenaikan suku bunga yang <b>besar presentasenya</b>, menunjukkan Bank dalam keadaan <b>kesulitan likuiditas</b></li>
     </ol>
   </div>
@@ -49,8 +49,8 @@
 <div class="collapse" id="cs3">
   <div class="card card-body">
         Kelompok Referensi adalah pemilik simpanan dengan nominal diatas <b> 100 juta</b>,dan telah menyimpan uangnya di Bank selama
-        lebih dari <b>5 tahun</b>. Kelompok ini memiliki informasi lengkap mengenai kondisi fundamental perbankan, serta memiliki
-        kemampuan analisis perbankan yang baik
+        lebih dari <b>5 tahun</b>. Kelompok ini memiliki informasi lengkap mengenai kondisi fundamental perbankan, 
+        dan tidak pernah salah dalam mengambil keputusan
   </div>
 </div>
 

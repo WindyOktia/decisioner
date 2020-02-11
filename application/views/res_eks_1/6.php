@@ -74,7 +74,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <h4>Pengujian Selanjutnya adalah mengenai <b> Rasio KPMM</b></h4>
+        <h4>Pengujian selanjutnya berkaitan dengan <b> Rasio KPMM</b></h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

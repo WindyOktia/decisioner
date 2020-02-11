@@ -24,7 +24,7 @@
   <div class="card card-body">
   <h3><b>Pengujian Rasio KPMM</b></h3>
       <legend>informasi</legend>
-      <h4>Setiap penurunan Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
+      <h4>Volatilitas Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
       <legend>Petunjuk</legend>
       <h4>Untuk setiap penurunan Rasio KPMM, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>
@@ -105,7 +105,7 @@
       <div class="modal-body">
       <h3><b>Pengujian Rasio KPMM</b></h3>
       <legend>informasi</legend>
-      <h4>Setiap penurunan Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
+      <h4>Volatilitas Rasio KPMM, Simpanan dalam keadaan <b>Tidak Terjamin</b> dan Bank dalam keadaan kesulitan likuiditas</h4>
       <legend>Petunjuk</legend>
       <h4>Untuk setiap penurunan Rasio KPMM, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>

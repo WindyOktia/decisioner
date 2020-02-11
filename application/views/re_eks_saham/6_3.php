@@ -4,53 +4,30 @@
 <button class="btn btn-warning mb-1 btn-sm" type="button" data-toggle="collapse" data-target="#cs2" aria-expanded="false" aria-controls="cs2">
     Petunjuk
 </button>
-<button class="btn btn-secondary mb-1 btn-sm" type="button" data-toggle="collapse" data-target="#cs3" aria-expanded="false" aria-controls="cs3">
-    Tentang Referensi
-</button>
 <div class="collapse" id="cs1">
   <div class="card card-body">
-    <ol>
-        <li>Anda adalah Nasabah Bank Y,  yang memiliki jumlah simpanan sebesar <b>60 Juta rupiah</b>. Simpanan Anda memberikan tambahan pendapatan sebesar suku bunga berlaku</li>
-        <li>Setiap kenaikan suku bunga yang <b>besar presentasenya</b>, menunjukkan Bank dalam keadaan <b>kesulitan likuiditas</b></li>
-    </ol>
+        Anda adalah pemegang saham Bank Y dengan nilai Investasi sebesar <b>50 Juta Rupiah</b>. Nilai per lembar saham
+                bank Anda saat ini adalah <b>6500 Rupiah</b>
   </div>
 </div>
 <div class="collapse" id="cs2">
   <div class="card card-body">
   <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
-      <legend>informasi</legend>
-      <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
-      <legend>Petunjuk</legend>
-      <ul>
-        <li>
-            <h4>Anda diminta untuk menunggu hingga responden selesai mengisi</h4>
-        </li>
-        <li>
-            <h4><b>Kesempatan anda untuk menjawab pada opsi pertama adalah 2,5 detik</b></h4>
-        </li>
-        <li>
-            <h4>Anda dapat melewati opsi pertama dan menunggu hingga opsi kedua muncul</h4>
-        </li>
-      </ul>
-      <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
-        <ul>
-            <li>
-                <a href="#" class="btn btn-success btn-sm">Jual Saham</a> untuk
-                <b>Menjual Saham</b> , atau
-            </li>
-            <li>
-                <a href="#" class="btn btn-sm btn-danger mt-2" >Tahan Saham</a> untuk
-                <b>Tidak Menjual Saham</b>
-            </li>
-        </ul>
-      </h4>
-  </div>
-</div>
-<div class="collapse" id="cs3">
-  <div class="card card-body">
-        Kelompok Referensi adalah pemilik simpanan dengan nominal diatas <b> 100 juta</b>,dan telah menyimpan uangnya di Bank selama
-        lebih dari <b>5 tahun</b>. Kelompok ini memiliki informasi lengkap mengenai kondisi fundamental perbankan, serta memiliki
-        kemampuan analisis perbankan yang baik
+        <legend>informasi</legend>
+        <h4>Data yang tersaji adalah data hasil pengambilan keputusan kelompok B, berkaitan dengan perubahan suku bunga simpanan</h4>
+        <legend>Petunjuk</legend>
+        <h4>Untuk setiap kenaikan Suku Bunga Simpanan, Anda diminta untuk mengambil keputusan dengan menekan tombol:
+            <ul>
+                <li>
+                    <a href="#" class="btn btn-success btn-sm">Menjual Saham</a> untuk
+                    <b>Menjual Saham</b> , atau
+                </li>
+                <li>
+                    <a href="#" class="btn btn-sm btn-danger mt-2" >Tidak Menjual Saham</a> untuk
+                    <b>Tidak Menjual Saham</b>
+                </li>
+            </ul>
+        </h4>
   </div>
 </div>
 
@@ -80,8 +57,8 @@
                     <span class="">Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
                 </div>
                 <div class="text-center mt-3">
-                    <button id="11" class="btn btn-primary  stay" disabled>Menjual Saham</button>
-                    <button id="12" class="btn btn-danger  stay" disabled>Tidak Menjual Saham</button>
+                    <button id="11" class="btn btn-success btn-block stay" disabled>Menjual Saham</button>
+                    <button id="12" class="btn btn-danger btn-block stay" disabled>Tidak Menjual Saham</button>
                 </div>
                 <br>
             </div>
@@ -111,14 +88,14 @@
     $('#11').click(function() {
         $("#11").prop('disabled', true);
         $("#12").prop('disabled', false);
-        $(".jwb").html('<b>Menjual Saham</b>');
+        $(".jwb").html('<b><kbd style="background-color:green">Menjual Saham</kbd></b>');
         $(".nexts").show(300);
     });
 
     $('#12').click(function() {
         $("#11").prop('disabled', false);
         $("#12").prop('disabled', true);
-        $(".jwb").html('<b>Tidak Menjual Saham</b>');
+        $(".jwb").html('<b><kbd style="background-color:red">Tidak Menjual Saham</kbd></b>');
         $(".nexts").show(300);
     });
 
@@ -140,7 +117,7 @@
                 label: '% of Votes',
                 data: [1, 1],
                 backgroundColor: [
-                    '#0094C6',
+                    '#4CAF50',
                     '#E4572E'
                 ],
                 borderWidth: 2

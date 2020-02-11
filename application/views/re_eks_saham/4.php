@@ -13,7 +13,7 @@
         bank anda saat ini adalah <b>6500 Rupiah</b>
     </li>
     <li>
-    Kenaikan tingkat Suku Bunga Simpanan, Suku Bunga LPS dan Rasio KPMM menunjukkan
+    Volatilitas tingkat Suku Bunga Simpanan, Suku Bunga LPS dan Rasio KPMM menunjukkan
         bahwa Bank dalam keadaan kesulitan likuiditas, dan dapat mempengaruhi tingkat pendapatan anda, yang nampak melalui
         prospek pendapatan positif dan pendapatan negatif
     </li>
@@ -23,7 +23,7 @@
 <div class="collapse" id="cs2">
   <div class="card card-body">
   <legend>Instruksi</legend>
-        <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
+        <h4>Volatilitas Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
         <legend>Petunjuk</legend>
         <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
             <ul>
@@ -110,7 +110,7 @@
         bank anda saat ini adalah <b>6500 Rupiah</b>
     </li>
     <li>
-    Kenaikan tingkat Suku Bunga Simpanan, Suku Bunga LPS dan Rasio KPMM menunjukkan
+    Volatilitas tingkat Suku Bunga Simpanan, Suku Bunga LPS dan Rasio KPMM menunjukkan
         bahwa Bank dalam keadaan kesulitan likuiditas, dan dapat mempengaruhi tingkat pendapatan anda, yang nampak melalui
         prospek pendapatan positif dan pendapatan negatif
     </li>
@@ -131,7 +131,7 @@
       <div class="modal-body">
         <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
         <legend>informasi</legend>
-        <h4>Setiap kenaikan Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
+        <h4>Volatilitas Suku Bunga Simpanan, menandakan Bank dalam kesulitan likuiditas</h4>
         <legend>Petunjuk</legend>
         <h4>Untuk setiap kenaikan Suku Bunga Simpanan, anda diminta untuk mengambil keputusan dengan menekan tombol:
             <ul>
@@ -159,7 +159,7 @@
     });
     $('#modalShow').on('hidden.bs.modal', function () {
   // Load up a new modal...
-  $('#modalNew').modal('show');
+        $('#modalNew').modal('show');
     })
     $('.j1').click(function() {
         $("#a1").html('<b> <kbd style="background-color:green">Menjual Saham</kbd> </b>');

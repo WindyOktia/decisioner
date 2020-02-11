@@ -13,7 +13,7 @@
         bank anda saat ini adalah <b>6500 Rupiah</b>
     </li>
     <li>
-    Kenaikan tingkat Suku Bunga Simpanan, Suku Bunga LPS dan Rasio KPMM menunjukkan
+    Volatilitas tingkat Suku Bunga Simpanan, Suku Bunga LPS dan Rasio KPMM menunjukkan
         bahwa Bank dalam keadaan kesulitan likuiditas, dan dapat mempengaruhi tingkat pendapatan anda, yang nampak melalui
         prospek pendapatan positif dan pendapatan negatif
     </li>
@@ -24,7 +24,7 @@
   <div class="card card-body">
       <h3><b>Pengujian Suku Bunga LPS</b></h3>
       <legend>informasi</legend>
-      <h4>Setiap kenaikan Suku Bunga LPS, Simpanan dalam keadaan tidak terjamin dan Bank dalam kondisi kesulitan likuiditas</h4>
+      <h4>Volatilitas Suku Bunga LPS, Simpanan dalam keadaan tidak terjamin dan Bank dalam kondisi kesulitan likuiditas</h4>
       <legend>Petunjuk</legend>
       <h4>Untuk setiap kenaikan Suku Bunga LPS, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>
@@ -105,7 +105,7 @@
       <div class="modal-body">
       <h3><b>Pengujian Suku Bunga LPS</b></h3>
       <legend>Informasi</legend>
-      <h4>Setiap kenaikan Suku Bunga LPS, Simpanan dalam keadaan tidak terjamin dan Bank dalam kondisi kesulitan likuiditas</h4>
+      <h4>Volatilitas Suku Bunga LPS, Simpanan dalam keadaan tidak terjamin dan Bank dalam kondisi kesulitan likuiditas</h4>
       <legend>Petunjuk</legend>
       <h4>Untuk setiap kenaikan Suku Bunga LPS, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>

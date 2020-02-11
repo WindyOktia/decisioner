@@ -10,6 +10,8 @@
   Anda adalah pemegang saham sebuah Bank dengan nilai investasi sebesar <b>50 juta rupiah</b>. Nilai per
             lembar saham anda saat ini adalah <b>6500 Rupiah</b>. Perubahan tingkat Suku Bunga Simpanan, Suku Bunga LPS,
             dan Rasio KPMM menunjukkan Bank dalam kesulitan likuiditas dan probabilitas
+
+
   </div>
 </div>
 <div class="collapse" id="cs2">

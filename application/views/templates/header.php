@@ -60,9 +60,7 @@
 		</div>
 
 		<div class="d-md-none">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
-				<i class="icon-tree5"></i>
-			</button>
+			<a href="<?= base_url('login/logout')?>//<?=$this->session->userdata('access_code')?>" class="navbar-toggler">Logout</a>
 			<button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
 				<i class="	fa fa-navicon"></i>
 			</button>
@@ -83,14 +81,9 @@
 				
 
 				<li class="nav-item dropdown dropdown-user">
-					<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-						<span>System <i class="ml-2 fa fa-angle-down"></i></span>
+					<a href="<?= base_url('login/logout')?>//<?=$this->session->userdata('access_code')?>" class="navbar-nav-link d-flex align-items-center dropdown-toggle">
+						<span>Logout</span>
 					</a>
-
-					<div class="dropdown-menu dropdown-menu-right">
-						<a href="<?= base_url()?>" target="_blank" class="dropdown-item"><i class="fa fa-grav"></i> Your Page</a>
-						<a href="<?= base_url()?>" class="dropdown-item"><i class="fa fa-external-link"></i> Logout</a>
-					</div>
 				</li>
 			</ul>
 		</div>
@@ -149,7 +142,7 @@
 							<a href="#" class="nav-link <?php if($page=='admin'||$page=='config'){echo 'active';};?>"><i class="fa fa-gear"></i> <span>Settings</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="#" class="nav-link <?php if($page=='admin'){echo 'active';};?>">Administrator</a></li>
+								<li class="nav-item"><a href="<?= base_url('admin/user')?>" class="nav-link <?php if($page=='admin'){echo 'active';};?>">Add User</a></li>
 								<li class="nav-item"><a href="#" class="nav-link <?php if($page=='config'){echo 'active';};?>">Configuration</a></li>
 							</ul>
 						</li>

@@ -2,6 +2,19 @@
 
 class Responden extends CI_Controller
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+        // $this->load->model('admin_model');
+        $this->load->model('login_model');
+        if($this->login_model->is_role() != "2"){
+            if($this->login_model->is_role() != "3"){
+                redirect('login');
+            }
+        }
+    }
+
     public function index()
     {
         $data['page']='grupD';
@@ -20,10 +33,6 @@ class Responden extends CI_Controller
 
     }
 
-    public function general_insert_eks3()
-    {
-
-    }
 
     public function ref()
     {

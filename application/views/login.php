@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no,user-scalable=no" />
     <title>Decisioner</title>
     <link rel="stylesheet" href="<?= base_url()?>assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" />
@@ -17,18 +17,19 @@
 
 <body>
     <div class="login-clean">
-        <form method="post">
+        <form action="<?=base_url('login/do_login')?>" method="post">
             <h2 style="text-align:center">Login</h2>
             <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
-            <div class="form-group"><input class="form-control" type="text" name="email" placeholder="Username" /></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" /></div>
+            <div class="form-group"><input class="form-control" required type="text" name="access_code" placeholder="Kode akses Anda" autocomplete='off'/></div>
+            <!-- <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" /></div> -->
             <div class="form-group">
-              <a href="<?= base_url('admin')?>" class="btn btn-primary btn-block">Admin</a>
-              <a href="<?= base_url('responden')?>" class="btn btn-primary btn-block">Responden</a>
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+              <!-- <a href="<?= base_url('responden')?>" class="btn btn-primary btn-block">Responden</a> -->
             
             </form>
             
     </div>
+    
 </body>
 
 </html>

@@ -84,12 +84,6 @@
                     <button id="12" class="btn btn-danger  stay" disabled>Tidak Menarik Tabungan</button>
                 </div>
                 <br>
-                <!-- <span class="delay" >> Opsi 2</span> -->
-                <legend class="text-center">Opsi 2 ( apabila opsi 1 sudah tidak bisa diklik )</legend>
-                <div class="text-center">
-                    <button id='13' class="btn btn-primary delay" disabled>Tarik Tabungan</button>
-                    <button id='14' class="btn btn-danger delay" disabled>Tidak Menarik Tabungan</button>
-                </div>
             </div>
         </div>
     </div>
@@ -121,42 +115,14 @@
                 $("#status").addClass("alert-success");
                 $('#status').html('Silahkan Mengisi');
                 $('.to_open').prop('disabled',false);
-                show();
+                $('.stay').prop('disabled',false);
             });
 
             }
         window.setTimeout(refreshStat, 15000);
 
-        function show(){
-            $('.stay').show(300);
-            $('.buka').hide(300);
-            delays = setTimeout(function () {
-                $('.delay').prop('disabled',false);
-            }, 10000);
-
-            var $elt = $('.stay').attr('disabled', false);
-
-            cancel = setTimeout(function () {
-                $elt.attr('disabled', true);
-            }, 5000);
-        }
     });
-    // $('.buka').click(function() {
-    //     $('.stay').show(300);
-    //     $('.buka').hide(300);
-    //     delays = setTimeout(function () {
-    //         $('.delay').show(300);
-    //     }, 10000);
-
-    //     var $elt = $('.stay').attr('disabled', false);
-
-    //     cancel = setTimeout(function () {
-    //         $elt.attr('disabled', true);
-    //     }, 5000);
-    // });
     $('#11').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#11").prop('disabled', true);
         $("#12").prop('disabled', false);
         $(".jwb").html('<b>Menarik Tabungan</b>');
@@ -164,8 +130,6 @@
     });
 
     $('#12').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#11").prop('disabled', false);
         $("#12").prop('disabled', true);
         $(".jwb").html('<b>Tidak Menarik Tabungan</b>');
@@ -173,8 +137,6 @@
     });
 
     $('#13').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#13").prop('disabled', true);
         $("#14").prop('disabled', false);
         $(".jwb").html('<b>Menarik Tabungan</b>');
@@ -182,8 +144,6 @@
     });
 
     $('#14').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#13").prop('disabled', false);
         $("#14").prop('disabled', true);
         $(".jwb").html('<b>Tidak Menarik Tabungan</b>');

@@ -53,44 +53,34 @@
 
 	<!-- Main navbar -->
 	<div class="navbar navbar-expand-md navbar-dark">
-		<div class="navbar-brand">
-			<a href="#" class="d-inline-block">
-                <img src="<?= base_url('assets/images/logo_light.png')?>" alt="">
-			</a>
-		</div>
-
-		<div class="d-md-none">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
-				<i class="icon-tree5"></i>
-			</button>
-			<button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
-				<i class="	fa fa-navicon"></i>
+		
+		<span class=""></span>
+		<div class="d-md-none text-right">
+			<button class="navbar-toggler float-right" type="button">
+				<a href="<?= base_url('login/logout')?>/<?=$this->session->userdata('access_code')?>" class="text-white">Logout</a>
 			</button>
 		</div>
 
 		<div class="collapse navbar-collapse" id="navbar-mobile">
-			<ul class="navbar-nav">
+			<!-- <ul class="navbar-nav">
 				<li class="nav-item">
 					<a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
-						<i class="fa fa-navicon"></i>
+						<i class=""></i>
 					</a>
 				</li>
-			</ul>
-
-			<span class="badge bg-success ml-md-3 mr-md-auto">Responden</span>
+			</ul> -->
+			<span class="badge bg-success ml-md-3 mr-md-auto">
+				<?php if($this->session->userdata('role')=='2'){echo 'Responden Saham';}?> 
+				<?php if($this->session->userdata('role')=='3'){echo 'Responden Bank';}?>
+			</span>
 
 			<ul class="navbar-nav">
 				
 
 				<li class="nav-item dropdown dropdown-user">
-					<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-						<span>System <i class="ml-2 fa fa-angle-down"></i></span>
+					<a href="<?= base_url('login/logout')?>/<?=$this->session->userdata('access_code')?>" class="navbar-nav-link d-flex align-items-center dropdown-toggle" >
+						<span>Logout</span>
 					</a>
-
-					<div class="dropdown-menu dropdown-menu-right">
-						<!-- <a href="<?= base_url()?>" target="_blank" class="dropdown-item"><i class="fa fa-grav"></i> Your Page</a> -->
-						<a href="<?= base_url()?>" class="dropdown-item"><i class="fa fa-external-link"></i> Logout</a>
-					</div>
 				</li>
 			</ul>
 		</div>
@@ -102,73 +92,7 @@
 	<div class="page-content">
 
 		<!-- Main sidebar -->
-		<div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
-
-			<!-- Sidebar mobile toggler -->
-			<div class="sidebar-mobile-toggler text-center">
-				<a href="#" class="sidebar-mobile-main-toggle">
-					<i class="icon-arrow-left8"></i>
-				</a>
-				Navigation
-				<a href="#" class="sidebar-mobile-expand">
-					<i class="icon-screen-full"></i>
-					<i class="icon-screen-normal"></i>
-				</a>
-			</div>
-			<!-- /sidebar mobile toggler -->
-
-
-			<!-- Sidebar content -->
-			<div class="sidebar-content">
-				<!-- Main navigation -->
-				<div class="card card-sidebar-mobile">
-					<ul class="nav nav-sidebar" data-nav-type="accordion">
-
-						<!-- Main -->
-						<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Menu</div> <i class="icon-menu" title="Main"></i></li>
-						<!-- <li class="nav-item">
-							<a href="<?= base_url('responden/ref')?>" class="nav-link <?php if($page=='ref'){echo 'active';};?>">
-								<i class="fa fa-users"></i>
-								<span>Referensi </span>
-							</a>
-						</li> -->
-						
-						<!-- <li class="nav-item">
-							<a href="<?= base_url('responden/b')?>" class="nav-link <?php if($page=='grupB'){echo 'active';};?>">
-								<i class="fa fa-users"></i>
-								<span>Eksperimen 2</span>
-							</a>
-						</li> -->
-						<!-- <li class="nav-item">
-							<a href="<?= base_url('responden/c')?>" class="nav-link <?php if($page=='grupC'){echo 'active';};?>">
-								<i class="fa fa-users"></i>
-								<span>Eksperimen 3 - Perbankan</span>
-							</a>
-						</li> -->
-						<li class="nav-item">
-							<a href="<?= base_url('responden/d0')?>" class="nav-link <?php if($page=='grupD'){echo 'active';};?>">
-								<i class="fa fa-users"></i>
-								<span>Saham</span>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a href="<?= base_url('responden/a0')?>" class="nav-link <?php if($page=='grupA'){echo 'active';};?>">
-								<i class="fa fa-users"></i>
-								<span>Bank</span>
-							</a>
-						</li>
-
-						
-
-					</ul>
-				</div>
-				<!-- /main navigation -->
-
-			</div>
-			<!-- /sidebar content -->
-			
-		</div>
+		
 		<!-- /main sidebar -->
 
 

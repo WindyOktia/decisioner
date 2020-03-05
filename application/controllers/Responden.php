@@ -23,17 +23,6 @@ class Responden extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function general_insert_eks1()
-    {
-
-    }
-
-    public function general_insert_eks2()
-    {
-
-    }
-
-
     public function ref()
     {
         $data['page']='ref';

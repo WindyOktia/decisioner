@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set("Asia/Jakarta");
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.1.3/decisioner/';
+$config['base_url'] = 'http://localhost/decisioner/';
 
 /*
 |--------------------------------------------------------------------------

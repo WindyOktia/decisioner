@@ -59,16 +59,10 @@
                     <span class="">Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
                 </div>
                 <div class="text-center mt-3">
-                    <button id="11" class="btn btn-primary  stay" disabled>Tarik Tabungan</button>
-                    <button id="12" class="btn btn-danger  stay" disabled>Tidak Menarik Tabungan</button>
+                    <button id="11" class="btn btn-success btn-block stay" disabled>Tarik Tabungan</button>
+                    <button id="12" class="btn btn-danger btn-block stay" disabled>Tidak Menarik Tabungan</button>
                 </div>
                 <br>
-                <!-- <span class="delay" >> Opsi 2</span> -->
-                <legend class="text-center">Opsi 2 ( apabila opsi 1 sudah tidak bisa diklik )</legend>
-                <div class="text-center">
-                    <button id='13' class="btn btn-primary delay" disabled>Tarik Tabungan</button>
-                    <button id='14' class="btn btn-danger delay" disabled>Tidak Menarik Tabungan</button>
-                </div>
             </div>
         </div>
     </div>
@@ -87,42 +81,14 @@
                 $("#status").addClass("alert-success");
                 $('#status').html('Silahkan Mengisi');
                 $('.to_open').prop('disabled',false);
-                show();
+                $('.stay').prop('disabled',false);
             });
 
             }
         window.setTimeout(refreshStat, 15000);
 
-        function show(){
-            $('.stay').show(300);
-            $('.buka').hide(300);
-            delays = setTimeout(function () {
-                $('.delay').prop('disabled',false);
-            }, 10000);
-
-            var $elt = $('.stay').attr('disabled', false);
-
-            cancel = setTimeout(function () {
-                $elt.attr('disabled', true);
-            }, 5000);
-        }
     });
-    // $('.buka').click(function() {
-    //     $('.stay').show(300);
-    //     $('.buka').hide(300);
-    //     delays = setTimeout(function () {
-    //         $('.delay').show(300);
-    //     }, 10000);
-
-    //     var $elt = $('.stay').attr('disabled', false);
-
-    //     cancel = setTimeout(function () {
-    //         $elt.attr('disabled', true);
-    //     }, 5000);
-    // });
     $('#11').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#11").prop('disabled', true);
         $("#12").prop('disabled', false);
         $(".jwb").html('<b>Menarik Tabungan</b>');
@@ -130,8 +96,6 @@
     });
 
     $('#12').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#11").prop('disabled', false);
         $("#12").prop('disabled', true);
         $(".jwb").html('<b>Tidak Menarik Tabungan</b>');
@@ -139,8 +103,6 @@
     });
 
     $('#13').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#13").prop('disabled', true);
         $("#14").prop('disabled', false);
         $(".jwb").html('<b>Menarik Tabungan</b>');
@@ -148,8 +110,6 @@
     });
 
     $('#14').click(function() {
-        clearTimeout(delays);
-        clearTimeout(cancel);
         $("#13").prop('disabled', false);
         $("#14").prop('disabled', true);
         $(".jwb").html('<b>Tidak Menarik Tabungan</b>');
@@ -172,7 +132,7 @@
                 label: '% of Votes',
                 data: [1, 1],
                 backgroundColor: [
-                    '#0094C6',
+                    '#4CAF50',
                     '#E4572E'
                 ],
                 borderWidth: 2
@@ -191,35 +151,19 @@
 
 <script type="text/javascript">
     $(function(){
-        function refreshVal1(){
-        $.ajax({
-            url: '<?= base_url('responden/refreshBank')?>'
-            }).done(function(results) {
-                $('#val1').val(results);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
-                addData(jajals_5, [val1s, val2s], 0);
-                window.setTimeout(refreshVal1, 3000);
-            });
-
-            }
-            window.setTimeout(refreshVal1, 3000);
-    });
-
-    $(function(){
         function refreshVal2(){
         $.ajax({
-            url: '<?= base_url('responden/refreshBank2')?>'
+            url: '<?= base_url('data/randBank')?>'
             }).done(function(resultsd) {
-                $('#val2').val(resultsd);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
+                var obj = JSON.parse(resultsd);
+                val1s=obj.big;
+                val2s=obj.small;
                 addData(jajals, [val1s, val2s], 0);
-                window.setTimeout(refreshVal2, 3000);
+                window.setTimeout(refreshVal2, 1000);
             });
 
             }
-            window.setTimeout(refreshVal2, 3000);
+            window.setTimeout(refreshVal2, 1000);
     });
 
     function addData(chart, data, datasetIndex) {

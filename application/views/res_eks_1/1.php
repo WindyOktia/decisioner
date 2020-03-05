@@ -1,3 +1,4 @@
+
 <button class="btn btn-primary mb-1 btn-sm" type="button" data-toggle="collapse" data-target="#cs1" aria-expanded="false" aria-controls="cs1">
     Informasi
 </button>
@@ -44,7 +45,7 @@
                 <tr>
                     <th class="text-center"><i class="fa fa-info-circle mr-2" style="color:#F44336"></i>Suku Bunga Simpanan (%)</th>
                     <th >Jawaban</th>
-                    <th>Keputusan Anda</th>
+                    <th>Keputusan Anda </th>
                 </tr>
             </thead>
             <tbody>
@@ -54,10 +55,10 @@
                     <th>
                         <div class="row">
                             <div class="col-md">
-                                <button class="btn btn-success btn-block tt_1_1 to_open" disabled>Tarik Tabungan</button>
+                                <button class="btn btn-success btn-block tt_1_1 to_open" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,1,6,1)"  disabled>Tarik Tabungan</button>
                             </div>
                             <div class="col-md">
-                                <button class="btn btn-danger btn-block tmt_1_1 to_open" disabled>Tidak Menarik Tabungan</button>
+                                <button class="btn btn-danger btn-block tmt_1_1 to_open" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,1,6,0)" disabled>Tidak Menarik Tabungan</button>
                             </div>
                         </div>
                     </th>
@@ -131,7 +132,30 @@
             });
 
             }
-            window.setTimeout(refreshStat, 15000);
+            window.setTimeout(refreshStat, 5000);
     });
 
+</script>
+
+<script type="text/javascript">
+    function submission($id_user,$tipe,$indeks,$persentase,$jawaban){
+        $.ajax({
+         type: "POST",
+         url: "<?=base_url('data/general_insert_eksBank')?>", 
+         data: {
+             id_user:$id_user,
+             tipe:$tipe,
+             indeks:$indeks,
+             persentase:$persentase,
+             jawaban:$jawaban,
+             },
+         dataType: "text",  
+         cache:false,
+         success: 
+              function(data){
+                console.log('success');  //as a debugging message.
+              }
+          });// you have missed this bracket
+     return false;
+    };
 </script>

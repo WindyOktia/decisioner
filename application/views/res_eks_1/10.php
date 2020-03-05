@@ -80,8 +80,8 @@
                     <span class="">Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
                 </div>
                 <div class="text-center mt-3">
-                    <button id="11" class="btn btn-primary  stay" disabled>Tarik Tabungan</button>
-                    <button id="12" class="btn btn-danger  stay" disabled>Tidak Menarik Tabungan</button>
+                    <button id="11" class="btn btn-success btn-block  stay" disabled>Tarik Tabungan</button>
+                    <button id="12" class="btn btn-danger btn-block stay" disabled>Tidak Menarik Tabungan</button>
                 </div>
                 <br>
             </div>
@@ -166,7 +166,7 @@
                 label: '% of Votes',
                 data: [1, 1],
                 backgroundColor: [
-                    '#0094C6',
+                    '#4CAF50',
                     '#E4572E'
                 ],
                 borderWidth: 2
@@ -185,35 +185,19 @@
 
 <script type="text/javascript">
     $(function(){
-        function refreshVal1(){
-        $.ajax({
-            url: '<?= base_url('responden/refreshBank')?>'
-            }).done(function(results) {
-                $('#val1').val(results);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
-                addData(jajals_5, [val1s, val2s], 0);
-                window.setTimeout(refreshVal1, 3000);
-            });
-
-            }
-            window.setTimeout(refreshVal1, 3000);
-    });
-
-    $(function(){
         function refreshVal2(){
         $.ajax({
-            url: '<?= base_url('responden/refreshBank2')?>'
+            url: '<?= base_url('data/randBank')?>'
             }).done(function(resultsd) {
-                $('#val2').val(resultsd);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
+                var obj = JSON.parse(resultsd);
+                val1s=obj.big;
+                val2s=obj.small;
                 addData(jajals, [val1s, val2s], 0);
-                window.setTimeout(refreshVal2, 3000);
+                window.setTimeout(refreshVal2, 1000);
             });
 
             }
-            window.setTimeout(refreshVal2, 3000);
+            window.setTimeout(refreshVal2, 1000);
     });
 
     function addData(chart, data, datasetIndex) {

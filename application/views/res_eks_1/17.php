@@ -59,8 +59,8 @@
                     <span class="">Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
                 </div>
                 <div class="text-center mt-3">
-                    <button id="11" class="btn btn-success btn-block  stay" disabled>Tarik Tabungan</button>
-                    <button id="12" class="btn btn-danger btn-block stay" disabled>Tidak Menarik Tabungan</button>
+                    <button id="11" class="btn btn-success btn-block  stay" onclick="submission( <?php echo $this->session->userdata('id_user');?>,2,3,4,1)" disabled>Tarik Tabungan</button>
+                    <button id="12" class="btn btn-danger btn-block stay" onclick="submission( <?php echo $this->session->userdata('id_user');?>,2,3,4,0)" disabled>Tidak Menarik Tabungan</button>
                 </div>
                 <br>
             </div>
@@ -170,4 +170,27 @@
     chart.update();
     }
 
+</script>
+
+<script type="text/javascript">
+    function submission($id_user,$tipe,$indeks,$persentase,$jawaban){
+        $.ajax({
+         type: "POST",
+         url: "<?=base_url('data/general_insert_eksBank')?>", 
+         data: {
+             id_user:$id_user,
+             tipe:$tipe,
+             indeks:$indeks,
+             persentase:$persentase,
+             jawaban:$jawaban,
+             },
+         dataType: "text",  
+         cache:false,
+         success: 
+              function(data){
+                console.log('success');  //as a debugging message.
+              }
+          });// you have missed this bracket
+     return false;
+    };
 </script>

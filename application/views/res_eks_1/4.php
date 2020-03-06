@@ -50,10 +50,10 @@
                     <th>
                         <div class="row">
                             <div class="col-md">
-                                <button class="btn btn-success btn-block tt_1_1">Tarik Tabungan</button>
+                                <button class="btn btn-success btn-block tt_1_1" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,2,6,1)">Tarik Tabungan</button>
                             </div>
                             <div class="col-md">
-                                <button class="btn btn-danger btn-block tmt_1_1">Tidak Menarik Tabungan</button>
+                                <button class="btn btn-danger btn-block tmt_1_1" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,2,6,0)">Tidak Menarik Tabungan</button>
                             </div>
                         </div>
                     </th>
@@ -76,7 +76,7 @@
       <h4>Untuk setiap kenaikan Suku Bunga LPS, anda diminta untuk mengambil keputusan dengan menekan tombol:
         <ul>
         <li>
-                <a href="#" class="btn btn-success btn-sm">Tarik Tabungan</a> untuk
+                <a href="#" class="btn btn-success btn-sm"  >Tarik Tabungan</a> untuk
                 <b>Menarik Tabungan</b> , atau
             </li>
             <li>
@@ -109,4 +109,27 @@
         $(".tt_1_1").prop('disabled', false);
         $(".tmt_1_1").prop('disabled', true);
     });
+</script>
+
+<script type="text/javascript">
+    function submission($id_user,$tipe,$indeks,$persentase,$jawaban){
+        $.ajax({
+         type: "POST",
+         url: "<?=base_url('data/general_insert_eksBank')?>", 
+         data: {
+             id_user:$id_user,
+             tipe:$tipe,
+             indeks:$indeks,
+             persentase:$persentase,
+             jawaban:$jawaban,
+             },
+         dataType: "text",  
+         cache:false,
+         success: 
+              function(data){
+                console.log('success');  //as a debugging message.
+              }
+          });// you have missed this bracket
+     return false;
+    };
 </script>

@@ -16,7 +16,7 @@ class Data extends CI_Controller
 
     public function general_insert_eksSaham()
     {
-
+        $this->act_model->insertSaham();
     }
 
 
@@ -33,16 +33,11 @@ class Data extends CI_Controller
 
     public function getCountSaham()
     {
-
-    }
-
-    public function getCountBank()
-    {
-
+        echo json_encode($this->act_model->getCountSaham());
     }
 
     public function getDataBank()
     {
-        
+        echo json_encode($this->act_model->getDataBank());
     }
 }

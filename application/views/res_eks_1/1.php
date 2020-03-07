@@ -123,16 +123,21 @@
     $(function(){
         function refreshStat(){
         $.ajax({
-            url: '<?= base_url('responden/refresh')?>'
+            url: '<?= base_url('data/getCountSaham')?>'
             }).done(function(refresh) {
-                $("#status").removeClass("alert-danger");
-                $("#status").addClass("alert-success");
-                $('#status').html('Silahkan Mengisi');
-                $('.to_open').prop('disabled',false);
+                var isi = JSON.parse(refresh);
+                if(isi[0].jml_res_done=='2'){
+                    $("#anu").val('anu');
+                    $("#status").removeClass("alert-danger");
+                    $("#status").addClass("alert-success");
+                    $('#status').html('Silahkan Mengisi');
+                    $('.to_open').prop('disabled',false);
+                } 
+                window.setTimeout(refreshStat, 1000);
             });
 
             }
-            window.setTimeout(refreshStat, 5000);
+            window.setTimeout(refreshStat, 1000);
     });
 
 </script>

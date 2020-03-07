@@ -52,10 +52,10 @@
                     <th style="width:30%">
                         <div class="row">
                             <div class="col-md">
-                                <button class="btn btn-success btn-sm j1">Jual Saham</button>
+                                <button class="btn btn-success btn-sm j1" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,3,8,1)">Jual Saham</button>
                             </div>
                             <div class="col-md">
-                                <button class="btn btn-danger btn-sm t1">Tahan Saham</button>
+                                <button class="btn btn-danger btn-sm t1" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,3,8,0)">Tahan Saham</button>
                             </div>
                         </div>
                     </th>
@@ -67,10 +67,10 @@
                     <th style="width:30%">
                         <div class="row">
                             <div class="col-md">
-                                <button class="btn btn-success btn-sm j2">Jual Saham</button>
+                                <button class="btn btn-success btn-sm j2" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,3,4,1)">Jual Saham</button>
                             </div>
                             <div class="col-md">
-                                <button class="btn btn-danger btn-sm t2">Tahan Saham</button>
+                                <button class="btn btn-danger btn-sm t2" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,3,4,0)">Tahan Saham</button>
                             </div>
                         </div>
                     </th>
@@ -82,10 +82,10 @@
                     <th style="width:30%">
                         <div class="row">
                             <div class="col-md">
-                                <button class="btn btn-success btn-sm j3">Jual Saham</button>
+                                <button class="btn btn-success btn-sm j3" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,3,2,1)">Jual Saham</button>
                             </div>
                             <div class="col-md">
-                                <button class="btn btn-danger btn-sm t3">Tahan Saham</button>
+                                <button class="btn btn-danger btn-sm t3" onclick="submission( <?php echo $this->session->userdata('id_user');?>,1,3,2,0)">Tahan Saham</button>
                             </div>
                         </div>
                     </th>
@@ -170,4 +170,27 @@
         $(".t3").prop('disabled', true);
         $(".submit").show(300);
     });
+</script>
+
+<script type="text/javascript">
+    function submission($id_user,$tipe,$indeks,$persentase,$jawaban){
+        $.ajax({
+         type: "POST",
+         url: "<?=base_url('data/general_insert_eksSaham')?>", 
+         data: {
+             id_user:$id_user,
+             tipe:$tipe,
+             indeks:$indeks,
+             persentase:$persentase,
+             jawaban:$jawaban,
+             },
+         dataType: "text",  
+         cache:false,
+         success: 
+              function(data){
+                console.log('success');  //as a debugging message.
+              }
+          });// you have missed this bracket
+     return false;
+    };
 </script>

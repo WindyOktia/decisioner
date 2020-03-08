@@ -120,21 +120,21 @@
 						<!-- Main -->
 						<li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Menu</div> <i class="icon-menu" title="Main"></i></li>
 						<li class="nav-item">
-							<a href="<?= base_url('admin')?>" class="nav-link <?php if($page=='eks_1'){echo 'active';};?>">
+							<a href="<?= base_url('admin')?>" class="nav-link <?php if($page=='eks_saham'){echo 'active';};?>">
 								<i class="fa fa-plus-circle"></i>
-								<span>Eksperimen </span>
-							</a>
-						</li>
-						<!-- <li class="nav-item">
-							<a href="<?= base_url('admin/eks_2')?>" class="nav-link <?php if($page=='eks_2'){echo 'active';};?>">
-								<i class="fa fa-plus-circle"></i>
-								<span>Eksperimen 2</span>
+								<span>Eksperimen Saham</span>
 							</a>
 						</li>
 						<li class="nav-item">
+							<a href="<?= base_url('admin/eks_bank')?>" class="nav-link <?php if($page=='eks_bank'){echo 'active';};?>">
+								<i class="fa fa-plus-circle"></i>
+								<span>Eksperimen Bank</span>
+							</a>
+						</li>
+						<!-- <li class="nav-item">
 							<a href="<?= base_url('admin/eks_3')?>" class="nav-link <?php if($page=='eks_3'){echo 'active';};?>">
 								<i class="fa fa-plus-circle"></i>
-								<span>Eksperimen 3</span>
+								<span>Relasional</span>
 							</a>
 						</li> -->
 

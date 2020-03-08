@@ -65,7 +65,7 @@
             <div class="col-md" style="font-size:14px">
                 <h4 class="text-center">Rasio KPMM :</h4>
                 <h1 style="font-size:42px" class="text-warning text-center"><b>2 %</b>
-                <span><a href="<?= base_url('responden/d15')?>" class="btn btn-sm btn-info float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span>
+                <span><a href="#" type="button" data-toggle="modal" data-target="#modalSelesai" class="btn btn-sm btn-info float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span>
                 </h1>
                 <legend>Keputusan Anda <span id="jawab_ref_3">Belum Menjawab</span></legend>
                 <button class="btn btn-success btn-block tarik_ref_4 show_opsi_4" onclick="submission( <?php echo $this->session->userdata('id_user');?>,4,3,2,1)" disabled>Menjual Saham</button>
@@ -73,6 +73,23 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="modalSelesai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informasi</h5>
+      </div>
+      <div class="modal-body">
+        <h4>Terimakasih...! Semua Form Sudah Terisi</h4>
+
+      </div>
+      <div class="modal-footer">
+        <a href="<?= base_url()?>"class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -101,6 +118,7 @@
          data: {
              id_user:$id_user,
              tipe:$tipe,
+             session: <?php echo $this->session->userdata('session');?>,
              indeks:$indeks,
              persentase:$persentase,
              jawaban:$jawaban,
@@ -198,9 +216,10 @@
                     $('#status').html('Silahkan Mengisi');
                     $('.show_opsi_4').prop('disabled',false);
                 }
+                window.setTimeout(refreshStat, 1000);
             });
             }
-            window.setTimeout(refreshStat, 2000);
+            window.setTimeout(refreshStat, 1000);
     });
 
     $(function(){

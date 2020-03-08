@@ -199,6 +199,7 @@
          data: {
              id_user:$id_user,
              tipe:$tipe,
+             session: <?php echo $this->session->userdata('session');?>,
              indeks:$indeks,
              persentase:$persentase,
              jawaban:$jawaban,

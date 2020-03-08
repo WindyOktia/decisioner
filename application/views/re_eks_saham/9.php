@@ -101,6 +101,7 @@
          data: {
              id_user:$id_user,
              tipe:$tipe,
+             session: <?php echo $this->session->userdata('session');?>,
              indeks:$indeks,
              persentase:$persentase,
              jawaban:$jawaban,
@@ -198,9 +199,10 @@
                     $('#status').html('Silahkan Mengisi');
                     $('.show_opsi_4').prop('disabled',false);
                 }
+                window.setTimeout(refreshStat, 1000);
             });
             }
-            window.setTimeout(refreshStat, 2000);
+            window.setTimeout(refreshStat, 1000);
     });
 
     $(function(){

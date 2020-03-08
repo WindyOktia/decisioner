@@ -57,8 +57,8 @@
                     <span class="">Keputusan Anda : <span class="jwb">Belum memilih Keputusan</span></span>
                 </div>
                 <div class="text-center mt-3">
-                    <button id="11" class="btn btn-success btn-block stay" disabled>Menjual Saham</button>
-                    <button id="12" class="btn btn-danger btn-block stay" disabled>Tidak Menjual Saham</button>
+                    <button id="11" class="btn btn-success btn-block stay" onclick="submission( <?php echo $this->session->userdata('id_user');?>,3,2,6,1)" disabled>Menjual Saham</button>
+                    <button id="12" class="btn btn-danger btn-block stay" onclick="submission( <?php echo $this->session->userdata('id_user');?>,3,2,6,0)" disabled>Tidak Menjual Saham</button>
                 </div>
                 <br>
             </div>
@@ -94,22 +94,65 @@
   </div>
 </div>
 
+<script type="text/javascript">
+    function submission($id_user,$tipe,$indeks,$persentase,$jawaban){
+        $.ajax({
+         type: "POST",
+         url: "<?=base_url('data/general_insert_eksSaham')?>", 
+         data: {
+             id_user:$id_user,
+             tipe:$tipe,
+             indeks:$indeks,
+             persentase:$persentase,
+             jawaban:$jawaban,
+             },
+         dataType: "text",  
+         cache:false,
+         success: 
+              function(data){
+                console.log('success');  //as a debugging message.
+              }
+          });// you have missed this bracket
+     return false;
+    };
+</script>
+
+<script type="text/javascript">
+    var arr='3';
+    var set_res='';
+     $(window).on('load',function(){
+        $('#modalShow').modal('show');
+        $.ajax({
+            url: '<?= base_url('data/getConfig')?>'
+            }).done(function(res) {
+                var obs = JSON.parse(res);
+                console.log(obs[0].val);
+                set_res=obs[0].val;
+            });
+    });
+</script>
+<!-- setting -->
 
 <script type="text/javascript">
     $(function(){
         function refreshStat(){
         $.ajax({
-            url: '<?= base_url('responden/refresh')?>'
+            url: '<?= base_url('data/getDataBank')?>'
             }).done(function(refresh) {
-                $("#status").removeClass("alert-danger");
-                $("#status").addClass("alert-success");
-                $('#status').html('Silahkan Mengisi');
-                $('.stay').prop('disabled',false);
+                var data= JSON.parse(refresh);
+                if(data[arr].jml_res==set_res){
+                    $("#status").removeClass("alert-danger");
+                    $("#status").addClass("alert-success");
+                    $('#status').html('Silahkan Mengisi');
+                    $('.stay').prop('disabled',false);
+                }
                 // show();
+                window.setTimeout(refreshStat, 1000);
+
             });
 
             }
-        window.setTimeout(refreshStat, 15000);
+        window.setTimeout(refreshStat, 1000);
 
     });
     $('#11').click(function() {
@@ -131,6 +174,14 @@
     $(window).on('load',function(){
         $('#modalShow').modal('show');
     });
+    $('#modalShow').on('hidden.bs.modal', function () {
+  // Load up a new modal...
+        $('#modalShow1').modal('show');
+    })
+    $('#modalShow1').on('hidden.bs.modal', function () {
+  // Load up a new modal...
+        $('#modalNew').modal('show');
+    })
 
 </script>
 
@@ -163,35 +214,22 @@
 
 <script type="text/javascript">
     $(function(){
-        function refreshVal1(){
-        $.ajax({
-            url: '<?= base_url('responden/refreshBank')?>'
-            }).done(function(results) {
-                $('#val1').val(results);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
-                addData(jajals_5, [val1s, val2s], 0);
-                window.setTimeout(refreshVal1, 3000);
-            });
-
-            }
-            window.setTimeout(refreshVal1, 3000);
-    });
-
-    $(function(){
         function refreshVal2(){
         $.ajax({
-            url: '<?= base_url('responden/refreshBank2')?>'
+            url: '<?= base_url('data/getDataBank')?>'
             }).done(function(resultsd) {
-                $('#val2').val(resultsd);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
+                var obj= JSON.parse(resultsd);
+                var total= parseInt(obj[arr].tarik) + parseInt(obj[arr].tahan);
+                var tarik= (parseInt(obj[arr].tarik)/total)*100;
+                var tahan=(parseInt(obj[arr].tahan)/total)*100;
+                val1s=tarik;
+                val2s=tahan;
                 addData(jajals, [val1s, val2s], 0);
-                window.setTimeout(refreshVal2, 3000);
+                window.setTimeout(refreshVal2, 1000);
             });
 
             }
-            window.setTimeout(refreshVal2, 3000);
+            window.setTimeout(refreshVal2, 1000);
     });
 
     function addData(chart, data, datasetIndex) {

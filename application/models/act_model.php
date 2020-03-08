@@ -72,6 +72,11 @@ class act_model extends CI_Model
 
     public function getDataBank()
     {
-        return $this->db->get('v_res_bank')->result_array();
+        return $this->db->get('v_real_bank')->result_array();
+    }
+
+    public function getConfig()
+    {
+        return $this->db->get('config')->result_array();
     }
 }

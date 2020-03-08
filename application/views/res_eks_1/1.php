@@ -115,6 +115,20 @@
     });
 </script>
 
+<script>
+    var set_res='';
+        $(window).on('load',function(){
+        $('#modalShow').modal('show');
+        $.ajax({
+            url: '<?= base_url('data/getConfig')?>'
+            }).done(function(res) {
+                var obs = JSON.parse(res);
+                console.log(obs[1].val);
+                set_res=obs[1].val;
+            });
+    });
+</script>
+
 <script type="text/javascript">
  $(window).on('load',function(){
         $('#modalShow').modal('show');
@@ -126,7 +140,7 @@
             url: '<?= base_url('data/getCountSaham')?>'
             }).done(function(refresh) {
                 var isi = JSON.parse(refresh);
-                if(isi[0].jml_res_done=='2'){
+                if(isi[0].jml_res_done==set_res){
                     $("#anu").val('anu');
                     $("#status").removeClass("alert-danger");
                     $("#status").addClass("alert-success");

@@ -15,9 +15,9 @@
 </div>
 <div class="collapse" id="cs2">
   <div class="card card-body">
-  <h3><b>Pengujian Rasio KPMM</b></h3>
+  <h3><b>Pengujian Suku Bunga Simpanan</b></h3>
         <legend>informasi</legend>
-        <h4>Data yang tersaji adalah data hasil pengambilan keputusan kelompok B, berkaitan dengan perubahan Rasio KPMM, berdasarkan hasil kelompok C, yaitu kelompok referensi</h4>
+        <h4>Data yang tersaji adalah data hasil pengambilan keputusan kelompok B, berkaitan dengan perubahan suku bunga simpanan, berdasarkan hasil kelompok C, yaitu kelompok referensi</h4>
         <legend>Petunjuk</legend>
         <h4>Untuk setiap data yang tersaji, Anda diminta untuk mengambil keputusan dengan menekan tombol:
             <ul>
@@ -43,18 +43,17 @@
 
 <div class="alert alert-warning mt-2" id="alert"><span id="status">Tunggu Sampai Responden Selesai Mengisi</span></div>
 
-
 <div class="card" id="submission_4" >
     <div class="card-body">
         <legend><b>REFERENSI</b></legend>
         <div class="row">
-            <div class="col-md">
-                <p>Referensi</p>
                 <input type="hidden" id="val1" value="3">
                 <input type="hidden" id="val2" value="4">
 
                 <input type="hidden" id="val3" value="3">
                 <input type="hidden" id="val4" value="4">
+            <div class="col-md">
+                <p>Referensi</p>
                 <canvas id="jajals_4" width="" height=""></canvas>
             </div>
             <span class="border"></span>
@@ -64,54 +63,58 @@
             </div>
             <span class="border"></span>
             <div class="col-md" style="font-size:14px">
-                <p>Kelompok Bank <span class="text-danger">(Pilihan Kedua)</span></p>
-                <canvas id="jajals_6" width="" height=""></canvas>
-            </div>
-        </div>
-        <div class="row mt-3" id=""  >
-            <div class="col-md">
-                <legend>Indeks</legend>
-                <div class="row">
-                    <div class="col">
-                        <h4>Rasio KPMM :</h4>
-                    </div>
-                    <div class="col mx-auto my-auto">
-                        <h1 style="font-size:42px" class="text-warning"><b>2 %</b></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md ">   
-                <legend>Keputusan Anda : <span id="jawab_ref_3">Belum Memilih</span><span><a href="#" type="button" data-toggle="modal" data-target="#exampleModal" class="float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span></legend>
-                <div class="col-12">
-                    <form action="" method="post">
-                        <button class="btn btn-success btn-block tarik_ref_4 show_opsi_4" disabled>Menjual Saham</button>
-                        <button class="btn btn-danger btn-block t-tarik_ref_4 show_opsi_4" disabled>Tidak Menjual Saham</button>
-                    </form>
-                </div>
+                <h4 class="text-center">Rasio KPMM :</h4>
+                <h1 style="font-size:42px" class="text-warning text-center"><b>2 %</b>
+                <span><a href="<?= base_url('responden/d15')?>" class="btn btn-sm btn-info float-right next_ref_3" style="display: none;">Lanjut <i class="ml-1 fa fa-arrow-circle-right"></i></a></span>
+                </h1>
+                <legend>Keputusan Anda <span id="jawab_ref_3">Belum Menjawab</span></legend>
+                <button class="btn btn-success btn-block tarik_ref_4 show_opsi_4" onclick="submission( <?php echo $this->session->userdata('id_user');?>,4,3,2,1)" disabled>Menjual Saham</button>
+                        <button class="btn btn-danger btn-block t-tarik_ref_4 show_opsi_4" onclick="submission( <?php echo $this->session->userdata('id_user');?>,4,3,2,0)" disabled>Tidak Menjual Saham</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Informasi</h5>
-      </div>
       <div class="modal-body">
-        <h4>Terimakasih...! Semua Form Sudah Terisi</h4>
-
+      <h3><b>Pengujian dengan data indeks realtime</b></h3>
+      <legend>Instruksi</legend>
+      <h4>Pada pengujian ini, anda diminta untuk menunggu hingga responden referensi selesai membuat keputusan,
+      perhatikan keputusan responden hingga data siap untuk anda isi
+      </h4>
+     
       </div>
       <div class="modal-footer">
-        <a href="<?= base_url()?>"class="btn btn-primary">Logout</a>
+        <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
-
-
+<script type="text/javascript">
+    function submission($id_user,$tipe,$indeks,$persentase,$jawaban){
+        $.ajax({
+         type: "POST",
+         url: "<?=base_url('data/general_insert_eksSaham')?>", 
+         data: {
+             id_user:$id_user,
+             tipe:$tipe,
+             indeks:$indeks,
+             persentase:$persentase,
+             jawaban:$jawaban,
+             },
+         dataType: "text",  
+         cache:false,
+         success: 
+              function(data){
+                console.log('success');  //as a debugging message.
+              }
+          });// you have missed this bracket
+     return false;
+    };
+</script>
 
 <script type="text/javascript">
     var ctx8 = document.getElementById('jajals_4').getContext('2d');
@@ -138,37 +141,9 @@
             }
         }
     });
-    var ctx10 = document.getElementById('jajals_6').getContext('2d');
-    var jajals_6 = new Chart(ctx10, {
-        type: 'pie',
-        data: {
-            labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
-            datasets: [{
-                label: '% of Votes',
-                data: [12, 19],
-                backgroundColor: [
-                    '#4CAF50',
-                    '#E4572E'
-                ],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            legend: {
-                position: 'right',
-                labels: {
-                    fontColor: "black"
-                }
-            }
-        }
-    });
 </script>
 
 <script type="text/javascript">
-    var val1 = document.getElementById('val1').value;
-    var val2 = document.getElementById('val2').value;
-    var val3 = document.getElementById('val3').value;
-    var val4 = document.getElementById('val4').value;
     var ctx9 = document.getElementById('jajals_5').getContext('2d');
     var jajals_5 = new Chart(ctx9, {
         type: 'pie',
@@ -196,123 +171,75 @@
 
 </script>
 
-<!-- <script type="text/javascript">
-    var val3 = document.getElementById('val3').value;
-    var val4 = document.getElementById('val4').value;
-    var ctx92 = document.getElementById('jajals_6').getContext('2d');
-    var jajals_6 = new Chart(ctx92, {
-        type: 'pie',
-        data: {
-            labels: ['Menarik Tabungan', 'Tidak Menarik Tabungan'],
-            datasets: [{
-                label: '% of Votes',
-                data: [1, 1],
-                backgroundColor: [
-                    '#0094C6',
-                    '#E4572E'
-                ],
-                borderWidth: 2
-            }]
-        },
-        options: {
-            legend: {
-                position: 'right',
-                labels: {
-                    fontColor: "black"
-                }
-            }
-        }
+<script type="text/javascript">
+    var arr='15';
+    var set_user='';
+     $(window).on('load',function(){
+        $('#modalShow').modal('show');
+        $.ajax({
+            url: '<?= base_url('data/getConfig')?>'
+            }).done(function(res) {
+                var obs = JSON.parse(res);
+                console.log(obs[0].val);
+                set_user=obs[0].val;
+            });
     });
 
-</script> -->
-
-<script type="text/javascript">
-    
     $(function(){
         function refreshStat(){
         $.ajax({
-            url: '<?= base_url('responden/refresh')?>'
+            url: '<?= base_url('data/getDataBank')?>'
             }).done(function(refresh) {
-                $("#alert").removeClass("alert-warning");
-                $("#alert").addClass("alert-success");
-                $('#status').html(refresh);
-                $('.show_opsi_4').prop('disabled',false);
+                var set=JSON.parse(refresh);
+                console.log(set[arr].jml_res);
+                if(set[arr].jml_res==set_user){
+                    $("#alert").removeClass("alert-warning");
+                    $("#alert").addClass("alert-success");
+                    $('#status').html('Silahkan Mengisi');
+                    $('.show_opsi_4').prop('disabled',false);
+                }
             });
-
             }
-            window.setTimeout(refreshStat, 15000);
+            window.setTimeout(refreshStat, 2000);
     });
 
     $(function(){
         function refreshVal1(){
         $.ajax({
-            url: '<?= base_url('responden/refreshBank')?>'
+            url: '<?= base_url('data/randBank')?>'
             }).done(function(results) {
-                $('#val1').val(results);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
-                addData(jajals_5, [val1s, val2s], 0);
-                window.setTimeout(refreshVal1, 5000);
+                var obj=JSON.parse(results);
+                val1s=obj.big;
+                val2s=obj.small;
+                addData(jajals_4, [val1s, val2s], 0);
+                window.setTimeout(refreshVal1, 1500);
             });
 
             }
-            window.setTimeout(refreshVal1, 5000);
+            window.setTimeout(refreshVal1, 1500);
     });
 
     $(function(){
         function refreshVal2(){
         $.ajax({
-            url: '<?= base_url('responden/refreshBank2')?>'
+            url: '<?= base_url('data/getDataBank')?>'
             }).done(function(resultsd) {
-                $('#val2').val(resultsd);
-                val1s=$('#val1').val()
-                val2s=$('#val2').val()
+                var ob = JSON.parse(resultsd);
+                var total=parseInt(ob[arr].tarik)+parseInt(ob[arr].tahan);
+                var tarik =(parseInt(ob[arr].tarik)/total)*100;
+                var tahan =(parseInt(ob[arr].tahan)/total)*100;
+
+                val1s=tarik;
+                val2s=tahan;
                 addData(jajals_5, [val1s, val2s], 0);
-                window.setTimeout(refreshVal2, 5000);
+                window.setTimeout(refreshVal2, 1000);
             });
 
             }
-            window.setTimeout(refreshVal2, 5000);
-    });
-
-    $(function(){
-        function refreshVal3(){
-        $.ajax({
-            url: '<?= base_url('responden/refreshBank3')?>'
-            }).done(function(resultx) {
-                $('#val3').val(resultx);
-                val3=$('#val3').val()
-                val4=$('#val4').val()
-                addData2(jajals_6, [val3, val4], 0);
-                window.setTimeout(refreshVal3, 5000);
-            });
-
-            }
-            window.setTimeout(refreshVal3, 5000);
-    });
-
-    $(function(){
-        function refreshVal3(){
-        $.ajax({
-            url: '<?= base_url('responden/refreshBank4')?>'
-            }).done(function(resultx) {
-                $('#val4').val(resultx);
-                val3=$('#val3').val()
-                val4=$('#val4').val()
-                addData2(jajals_6, [val3, val4], 0);
-                window.setTimeout(refreshVal3, 5000);
-            });
-
-            }
-            window.setTimeout(refreshVal3, 5000);
+            window.setTimeout(refreshVal2, 1000);
     });
 
     function addData(chart, data, datasetIndex) {
-    chart.data.datasets[datasetIndex].data = data;
-    chart.update();
-    }
-
-    function addData2(chart, data, datasetIndex) {
     chart.data.datasets[datasetIndex].data = data;
     chart.update();
     }

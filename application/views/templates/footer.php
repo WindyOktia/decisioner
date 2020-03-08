@@ -349,28 +349,28 @@
 
 		$('.tarik_ref_3').click(function() {
 			$('#jawab_ref_3').html('<b>Menarik Tabungan</b>');
-			$('.next_ref_3').show();
+			$('.next_ref_3').show(300);
 			$(".tarik_ref_3").prop('disabled', true);
 			$(".t-tarik_ref_3").prop('disabled', false);
 		});
 
 		$('.t-tarik_ref_3').click(function() {
 			$('#jawab_ref_3').html('<b>Tidak Menarik Tabungan</b>');
-			$('.next_ref_3').show();
+			$('.next_ref_3').show(300);
 			$(".tarik_ref_3").prop('disabled', false);
 			$(".t-tarik_ref_3").prop('disabled', true);
 		});
 
 		$('.tarik_ref_4').click(function() {
 			$('#jawab_ref_3').html('<b>Menjual Saham</b>');
-			$('.next_ref_3').show();
+			$('.next_ref_3').show(300);
 			$(".tarik_ref_4").prop('disabled', true);
 			$(".t-tarik_ref_4").prop('disabled', false);
 		});
 
 		$('.t-tarik_ref_4').click(function() {
 			$('#jawab_ref_3').html('<b>Tidak Menjual Saham</b>');
-			$('.next_ref_3').show();
+			$('.next_ref_3').show(300);
 			$(".tarik_ref_4").prop('disabled', false);
 			$(".t-tarik_ref_4").prop('disabled', true);
 		});

@@ -40,4 +40,9 @@ class Data extends CI_Controller
     {
         echo json_encode($this->act_model->getDataBank());
     }
+
+    public function getConfig()
+    {
+        echo json_encode($this->act_model->getConfig());
+    }
 }

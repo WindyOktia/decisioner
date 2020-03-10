@@ -189,7 +189,7 @@
     $(function(){
         function refreshStat(){
         $.ajax({
-            url: '<?= base_url('data/getDataBank')?>'
+            url: '<?= base_url('data/getDataBank')?>/<?php echo $this->session->userdata('session');?>'
             }).done(function(refresh) {
                 var set=JSON.parse(refresh);
                 console.log(set[arr].jml_res);
@@ -224,7 +224,7 @@
     $(function(){
         function refreshVal2(){
         $.ajax({
-            url: '<?= base_url('data/getDataBank')?>'
+            url: '<?= base_url('data/getDataBank')?>/<?php echo $this->session->userdata('session');?>'
             }).done(function(resultsd) {
                 var ob = JSON.parse(resultsd);
                 var total=parseInt(ob[arr].tarik)+parseInt(ob[arr].tahan);

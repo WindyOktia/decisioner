@@ -31,14 +31,14 @@ class Data extends CI_Controller
         echo json_encode($arr1);
     }
 
-    public function getCountSaham()
+    public function getCountSaham($session)
     {
-        echo json_encode($this->act_model->getCountSaham());
+        echo json_encode($this->act_model->getCountSaham($session));
     }
 
-    public function getDataBank()
+    public function getDataBank($session)
     {
-        echo json_encode($this->act_model->getDataBank());
+        echo json_encode($this->act_model->getDataBank($session));
     }
 
     public function getConfig()

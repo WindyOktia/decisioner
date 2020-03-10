@@ -71,14 +71,14 @@ class act_model extends CI_Model
         return false; 
     }
 
-    public function getCountSaham()
+    public function getCountSaham($session)
     {
-        return $this->db->get('v_done')->result_array();
+        return $this->db->get_where('v_user_per_session',['session'=>$session])->result_array();
     }
 
-    public function getDataBank()
+    public function getDataBank($session)
     {
-        return $this->db->get('v_real_bank')->result_array();
+        return $this->db->get_where('v_real_bank_ses',['session'=>$session])->result_array();
     }
 
     public function getConfig()

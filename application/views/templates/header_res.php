@@ -72,6 +72,7 @@
 			<span class="badge bg-success ml-md-3 mr-md-auto">
 				<?php if($this->session->userdata('role')=='2'){echo 'Responden Saham';}?> 
 				<?php if($this->session->userdata('role')=='3'){echo 'Responden Bank';}?>
+				[ sesi <?= $this->session->userdata('session')?> ] 
 			</span>
 
 			<ul class="navbar-nav">

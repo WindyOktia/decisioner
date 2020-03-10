@@ -137,10 +137,10 @@
     $(function(){
         function refreshStat(){
         $.ajax({
-            url: '<?= base_url('data/getCountSaham')?>'
+            url: '<?= base_url('data/getCountSaham')?>/<?php echo $this->session->userdata('session');?>'
             }).done(function(refresh) {
                 var isi = JSON.parse(refresh);
-                if(isi[0].jml_res_done==set_res){
+                if(isi[0].jml_user==set_res){
                     $("#anu").val('anu');
                     $("#status").removeClass("alert-danger");
                     $("#status").addClass("alert-success");

@@ -92,7 +92,7 @@
 </script>
 
 <script type="text/javascript">
-    var arr='6';
+    var arr='8';
     var set_res='';
      $(window).on('load',function(){
         $('#modalShow').modal('show');
@@ -111,7 +111,7 @@
     $(function(){
         function refreshStat(){
         $.ajax({
-            url: '<?= base_url('data/getDataBank')?>'
+            url: '<?= base_url('data/getDataBank')?>/<?php echo $this->session->userdata('session');?>'
             }).done(function(refresh) {
                 var data= JSON.parse(refresh);
                 if(data[arr].jml_res==set_res){
@@ -190,7 +190,7 @@
     $(function(){
         function refreshVal2(){
         $.ajax({
-            url: '<?= base_url('data/getDataBank')?>'
+            url: '<?= base_url('data/getDataBank')?>/<?php echo $this->session->userdata('session');?>'
             }).done(function(resultsd) {
                 var obj= JSON.parse(resultsd);
                 var total= parseInt(obj[arr].tarik) + parseInt(obj[arr].tahan);

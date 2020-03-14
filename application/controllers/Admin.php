@@ -7,6 +7,7 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->model('admin_model');
         $this->load->model('login_model');
+        $this->load->model('act_model');
         if($this->login_model->is_role() != "1"){
             // echo'sorry, you dont have access';
             redirect('login');
@@ -26,6 +27,16 @@ class Admin extends CI_Controller
         $data['page']='eks_bank';
         $this->load->view('templates/header',$data);
         $this->load->view('admin/eksperimen_bank');
+        $this->load->view('templates/footer');
+    }
+
+    public function raw()
+    {
+        $data['page']='raw';
+        $data['bank']=$this->admin_model->getRawBank();
+        $data['saham']=$this->admin_model->getRawSaham();
+        $this->load->view('templates/header',$data);
+        $this->load->view('admin/raw',$data);
         $this->load->view('templates/footer');
     }
 
@@ -71,9 +82,28 @@ class Admin extends CI_Controller
         $del = $this->admin_model->deleteUser($id);
         if($del==true)
         {
-            $this->session->set_flashdata('success', 'Data Berhasil Dihapus');
+            $this->session->set_flashdata('error', 'Data Berhasil Dihapus');
         }
         redirect('admin/user');
+    }
+
+    public function config()
+    {
+        $data['page']='config';
+        $data['config']=$this->act_model->getConfig();
+        $this->load->view('templates/header',$data);
+        $this->load->view('admin/config',$data);
+        $this->load->view('templates/footer');
+    }
+
+    public function updateConfig()
+    {
+        $upd = $this->act_model->updateConfig();
+        if($upd ==true)
+        {
+            $this->session->set_flashdata('success', 'Data Berhasil Disimpan');
+        }
+        redirect('admin/config');
     }
 
     

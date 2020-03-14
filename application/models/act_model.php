@@ -85,4 +85,12 @@ class act_model extends CI_Model
     {
         return $this->db->get('config')->result_array();
     }
+
+    public function updateConfig()
+    {
+        $this->db->set('val', $this->input->post('val'));
+        $this->db->where('id_config', $this->input->post('id'));
+        $this->db->update('config');
+        return true;
+    }
 }

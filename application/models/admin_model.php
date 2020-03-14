@@ -19,6 +19,16 @@ class admin_model extends CI_Model
         return true;
     }
 
+    public function getRawBank()
+    {
+        return $this->db->get('eks_bank')->result_array();
+    }
+
+    public function getRawSaham()
+    {
+        return $this->db->get('eks_saham')->result_array();
+    }
+
     public function getUser()
     {
         return $this->db->get('user')->result_array();

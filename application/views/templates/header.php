@@ -131,19 +131,19 @@
 								<span>Eksperimen Bank</span>
 							</a>
 						</li>
-						<!-- <li class="nav-item">
-							<a href="<?= base_url('admin/eks_3')?>" class="nav-link <?php if($page=='eks_3'){echo 'active';};?>">
+						<li class="nav-item">
+							<a href="<?= base_url('admin/raw')?>" class="nav-link <?php if($page=='raw'){echo 'active';};?>">
 								<i class="fa fa-plus-circle"></i>
-								<span>Relasional</span>
+								<span>Data Mentah</span>
 							</a>
-						</li> -->
+						</li>
 
 						<li class="nav-item nav-item-submenu <?php if($page=='admin'||$page=='config'){echo 'nav-item-expanded nav-item-open';};?>">
 							<a href="#" class="nav-link <?php if($page=='admin'||$page=='config'){echo 'active';};?>"><i class="fa fa-gear"></i> <span>Settings</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="<?= base_url('admin/user')?>" class="nav-link <?php if($page=='admin'){echo 'active';};?>">Add User</a></li>
-								<li class="nav-item"><a href="#" class="nav-link <?php if($page=='config'){echo 'active';};?>">Configuration</a></li>
+								<li class="nav-item"><a href="<?= base_url('admin/config')?>" class="nav-link <?php if($page=='config'){echo 'active';};?>">Configuration</a></li>
 							</ul>
 						</li>
 

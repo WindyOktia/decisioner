@@ -8,7 +8,7 @@
         </p>
         <h4 id="sah1">
             - Anda adalah pemegang saham sebuah Bank dengan nilai investasi sebesar <b>50 juta rupiah</b>. Nilai per
-            lembar saham Bank anda saat ini adalah <b>6500 Rupiah</b>. Kenaikan tingkat Suku Bunga Simpanan, Suku Bunga LPS,
+            lembar saham Bank anda saat ini adalah <b>6500 Rupiah</b>. Volatilitas Suku Bunga Simpanan, Suku Bunga LPS,
             dan Rasio KPMM menunjukkan Bank dalam keadaan kesulitan likuiditas dan probabilitas
         </h4>
         <h4 id="sah2" style="display:none">

@@ -1,6 +1,6 @@
 <?php
 
-class act_model extends CI_Model
+class Act_model extends CI_Model
 {
 
     public function insertBank()

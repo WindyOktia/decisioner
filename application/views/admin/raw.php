@@ -1,4 +1,4 @@
-<div class="card card-body">
+<!-- <div class="card card-body">
     <legend>Pilih data untuk Export Excel</legend>
     <form action="">
         <div class="row">
@@ -27,4 +27,6 @@
         </div>
         <button type="submit" class="btn btn-success btn-sm mt-3 float-right">Export</button>
     </form>
-</div>
+</div> -->
+
+<a href="<?=base_url('export/export')?>" class="btn btn-sm btn-success">Excel Export</a>

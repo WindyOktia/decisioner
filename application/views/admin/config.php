@@ -34,3 +34,7 @@
   </div>
 </div>
 <?php endforeach?>
+
+<legend><div class="text-danger">Reset Area (for testing only)</div></legend>
+
+<a href="<?=base_url('admin/resetTable')?>" class="btn btn-danger btn-sm">Reset Data</a>

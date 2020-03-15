@@ -41,7 +41,72 @@
   </div>
 </div>
 
-<div class="alert alert-warning mt-2" id="alert"><span id="status">Tunggu Sampai Responden Selesai Mengisi</span></div>
+<style>
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: orange;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.or{
+    color:orange;
+}
+
+</style>
+
+<div class=" mt-2 text-center" id="status"><h3><b class="or">[</b> .. Tunggu hingga Responden Bank selesai mengisi .. <b class="or">]</b></h3>
+<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
 
 <div class="card" id="submission_4" >
     <div class="card-body">
@@ -58,7 +123,7 @@
             </div>
             <span class="border"></span>
             <div class="col-md" style="font-size:14px">
-                <p>Kelompok Bank <span class="text-danger">(Pilihan Pertama)</span></p>
+                <p>Kelompok Bank</p>
                 <canvas id="jajals_5" width="" height=""></canvas>
             </div>
             <span class="border"></span>
@@ -211,9 +276,9 @@
                 var set=JSON.parse(refresh);
                 console.log(set[arr].jml_res);
                 if(set[arr].jml_res==set_user){
-                    $("#alert").removeClass("alert-warning");
-                    $("#alert").addClass("alert-success");
-                    $('#status').html('Silahkan Mengisi');
+                    $("#status").removeClass("alert-warning");
+                    $("#status").addClass("alert-success");
+                    $('#status').html('<h3>Silahkan Mengisi</h3>');
                     $('.show_opsi_4').prop('disabled',false);
                 }
                 window.setTimeout(refreshStat, 1000);

@@ -106,6 +106,15 @@ class Admin extends CI_Controller
         redirect('admin/config');
     }
 
+    public function resetTable()
+    {
+        $upd = $this->admin_model->resetTable();
+        if($upd ==true)
+        {
+            $this->session->set_flashdata('error', 'Data Berhasil Direset');
+        }
+        redirect('admin/config');
+    }
     
 
 

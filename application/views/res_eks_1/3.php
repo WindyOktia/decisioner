@@ -75,7 +75,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <h4>Pengujian Selanjutnya berkaitan dengan <b>Suku Bunga LPS</b></h4>
+        <h4>Pengujian Selanjutnya menggunakan <b>Suku Bunga LPS</b></h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

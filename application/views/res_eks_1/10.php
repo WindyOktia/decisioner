@@ -54,7 +54,73 @@
   </div>
 </div>
 
-<div class="alert alert-danger mt-2" id="status">Tunggu hingga Responden selesai mengisi</div>
+<style>
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: orange;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.or{
+    color:orange;
+}
+
+</style>
+
+<div class=" mt-2 text-center" id="status"><h3><b class="or">[</b> .. Tunggu hingga Kelompok Referensi selesai mengisi .. <b class="or">]</b></h3>
+<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</div>
+
 
 <input type="hidden" id="val1" value="3">
 <input type="hidden" id="val2" value="4">
@@ -89,20 +155,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-      <h5 class="modal-title text-danger mb-2" id="exampleModalLabel">INSTRUKSI</h5>
-        <h4>Pada pengujian ini, anda dapat langsung menentukan keputusan pada <b>opsi pertama</b>, atau dapat menunggu hingga <b>opsi kedua</b> muncul</h4>
-        <!-- <h4>Pelajari Petunjuk sebelum membuka pilihan opsi</h4> -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary tutup" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 <script type="text/javascript">
@@ -113,7 +166,7 @@
             }).done(function(refresh) {
                 $("#status").removeClass("alert-danger");
                 $("#status").addClass("alert-success");
-                $('#status').html('Silahkan Mengisi');
+                $('#status').html('<h3>Silahkan Mengisi</h3>');
                 $('.to_open').prop('disabled',false);
                 $('.stay').prop('disabled',false);
             });

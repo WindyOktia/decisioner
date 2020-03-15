@@ -142,7 +142,7 @@
 							<a href="#" class="nav-link <?php if($page=='admin'||$page=='config'){echo 'active';};?>"><i class="fa fa-gear"></i> <span>Settings</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="<?= base_url('admin/user')?>" class="nav-link <?php if($page=='admin'){echo 'active';};?>">Add User</a></li>
+								<li class="nav-item"><a href="<?= base_url('admin/user')?>" class="nav-link <?php if($page=='admin'){echo 'active';};?>">Users</a></li>
 								<li class="nav-item"><a href="<?= base_url('admin/config')?>" class="nav-link <?php if($page=='config'){echo 'active';};?>">Configuration</a></li>
 							</ul>
 						</li>

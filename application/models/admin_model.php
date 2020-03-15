@@ -1,6 +1,6 @@
 <?php
 
-class admin_model extends CI_Model
+class Admin_model extends CI_Model
 {
     public function addUser()
     {
@@ -50,6 +50,13 @@ class admin_model extends CI_Model
     {
         $this->db->where('id_user', $id);
         $this->db->delete('user');
+        return true;
+    }
+
+    public function resetTable()
+    {
+        $this->db->truncate('eks_bank');
+        $this->db->truncate('eks_saham');
         return true;
     }
 }

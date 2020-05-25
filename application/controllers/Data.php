@@ -31,6 +31,17 @@ class Data extends CI_Controller
         echo json_encode($arr1);
     }
 
+    public function randBankFalse()
+    {
+        $big = rand(0,15);
+        $small = rand(85,100);
+        $total = $big+$small;
+        $bigrate = ($big/$total)*100;
+        $smallrate = ($small/$total)*100;
+        $arr1 = array ('big'=>intval($bigrate),'small'=>intval($smallrate));
+        echo json_encode($arr1);
+    }
+
     public function getCountSaham($session)
     {
         echo json_encode($this->act_model->getCountSaham($session));

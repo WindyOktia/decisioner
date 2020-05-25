@@ -27,6 +27,9 @@
               <!-- <a href="<?= base_url('responden')?>" class="btn btn-primary btn-block">Responden</a> -->
             
             </form>
+            <h4 style="text-align:center;padding-top:25px">- Panduan Pengguna -</h4>
+            <a href="" class="btn btn-secondary btn-block">Responden Saham</a>
+            <a href="" class="btn btn-secondary btn-block">Responden Bank</a>
             
     </div>
     

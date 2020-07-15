@@ -12,11 +12,17 @@
 	<script  src="<?= base_url('assets/js/chart.js')?>"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 		$( "#srch" ).click(function() {
 			document.getElementById("bigger-search").submit();
 		});
 
+		$(document).ready( function () {
+			$('#resBank').DataTable();
+			$('#resSaham').DataTable();
+		} );
+		
 		toastr.options = {
 		"closeButton": true,
 		"debug": false,

@@ -69,4 +69,29 @@ class Admin_model extends CI_Model
     {
         return $this->db->get('v_final_bank')->result_array();
     }
+
+    public function getAnswerSaham()
+    {
+        return $this->db->get('v_answer_saham')->result_array();
+    }
+
+    public function getAnswerBank()
+    {
+        return $this->db->get('v_answer_bank')->result_array();
+    }
+
+    public function getDetailAnswerSaham($id)
+    {
+        return $this->db->get_where('eks_saham',['id_user'=>$id])->result_array();
+    }
+
+    public function getDetailAnswerBank($id)
+    {
+        return $this->db->get_where('eks_bank',['id_user'=>$id])->result_array();
+    }
+
+    public function getAccCode($id)
+    {
+        return $this->db->get_where('user',['id_user'=>$id])->result_array();
+    }
 }

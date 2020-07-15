@@ -122,10 +122,44 @@ class Admin extends CI_Controller
         }
         redirect('admin/config');
     }
-    
 
+    public function dataSaham()
+    {
+        $data['page']='dataSaham';
+        $data['saham']= $this->admin_model->getAnswerSaham();
+        $this->load->view('templates/header',$data);
+        $this->load->view('admin/dataSaham',$data);
+        $this->load->view('templates/footer');
+    }
 
+    public function dataBank()
+    {
+        $data['page']='dataBank';
+        $data['bank']= $this->admin_model->getAnswerBank();
+        $this->load->view('templates/header',$data);
+        $this->load->view('admin/dataBank',$data);
+        $this->load->view('templates/footer');
+    }
 
+    public function detailSaham($id)
+    {
+        $data['page']='dataSaham';
+        $data['saham']= $this->admin_model->getDetailAnswerSaham($id);
+        $data['user']= $this->admin_model->getAccCode($id);
+        $this->load->view('templates/header',$data);
+        $this->load->view('admin/detailSaham',$data);
+        $this->load->view('templates/footer');
+    }
+
+    public function detailBank($id)
+    {
+        $data['page']='dataBank';
+        $data['bank']= $this->admin_model->getDetailAnswerBank($id);
+        $data['user']= $this->admin_model->getAccCode($id);
+        $this->load->view('templates/header',$data);
+        $this->load->view('admin/detailBank',$data);
+        $this->load->view('templates/footer');
+    }
 
 
 }

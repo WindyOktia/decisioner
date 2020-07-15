@@ -18,6 +18,10 @@
 	<link href="<?= base_url('assets/css/components.min.css')?>" rel="stylesheet" type="text/css">
     <link href="<?= base_url('assets/css/colors.min.css')?>" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+  
+
+
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<!-- /global stylesheets -->
 
@@ -25,8 +29,7 @@
 	<script src="<?= base_url('assets/js/jquery.min.js')?>"></script>
 	<script src="<?= base_url('assets/js/bootstrap.bundle.min.js')?>"></script>
 	<script src="<?= base_url('assets/js/blockui.min.js')?>"></script>
-	<script src="<?= base_url('assets/js/datatables_advanced.js')?>"></script>
-	<script src="<?= base_url('assets/js/datatables.min.js')?>"></script>
+	
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.jss"></script>
@@ -129,6 +132,18 @@
 							<a href="<?= base_url('admin/eks_bank')?>" class="nav-link <?php if($page=='eks_bank'){echo 'active';};?>">
 								<i class="fa fa-plus-circle"></i>
 								<span>Eksperimen Bank</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url('admin/dataSaham')?>" class="nav-link <?php if($page=='dataSaham'){echo 'active';};?>">
+								<i class="fa fa-plus-circle"></i>
+								<span>Data Responden Saham</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url('admin/dataBank')?>" class="nav-link <?php if($page=='dataBank'){echo 'active';};?>">
+								<i class="fa fa-plus-circle"></i>
+								<span>Data Responden Bank</span>
 							</a>
 						</li>
 						<li class="nav-item">

@@ -197,8 +197,6 @@ class Responden extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    
-
     public function d0()
     {
         $data['page']='grupD';

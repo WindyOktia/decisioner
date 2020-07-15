@@ -59,4 +59,14 @@ class Admin_model extends CI_Model
         $this->db->truncate('eks_saham');
         return true;
     }
+
+    public function getFinalSaham()
+    {
+        return $this->db->get('v_final_saham')->result_array();
+    }
+
+    public function getFinalBank()
+    {
+        return $this->db->get('v_final_bank')->result_array();
+    }
 }

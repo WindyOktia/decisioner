@@ -59,9 +59,9 @@
                 <tr>
                     <th class="text-center text-warning"><h1><b>8</b> %</h1></th>
                     <th ><h1><b>1500</b></h1></th>
-                    <th ><h1><b>0.3</b></h1></th>
+                    <th ><h1><b>30</b></h1></th>
                     <th ><h1><b>-2000</b></h1></th>
-                    <th ><h1><b>0.3</b></h1></th>
+                    <th ><h1><b>30</b></h1></th>
                     <th ><span id="a1">Belum Menjawab</span></th>
                     <th class="text-center">
                         <button class="btn btn-success btn-sm btn-block j1 mb-2" onclick="submission( <?php echo $this->session->userdata('id_user');?>,2,3,8,1)">Jual Saham</button>
@@ -71,9 +71,9 @@
                 <tr id="ops2" style="display:none;background-color:#EAEBED">
                     <th class="text-center text-warning"><h1><b>4</b> %</h1></th>
                     <th ><h1><b>1000</b></h1></th>
-                    <th ><h1><b>0.55</b></h1></th>
+                    <th ><h1><b>55</b></h1></th>
                     <th ><h1><b>-3000</b></h1></th>
-                    <th ><h1><b>0.15</b></h1></th>
+                    <th ><h1><b>15</b></h1></th>
                     <th ><span id="a2">Belum Menjawab</span></th>
                     <th >
                         <button class="btn btn-success btn-sm btn-block j2" onclick="submission( <?php echo $this->session->userdata('id_user');?>,2,3,4,1)">Jual Saham</button>
@@ -83,9 +83,9 @@
                 <tr id="ops3" style="display:none">
                     <th class="text-center text-warning"><h1><b>2</b> %</h1></th>
                     <th ><h1><b>500</b></h1></th>
-                    <th ><h1><b>0.15</b></h1></th>
+                    <th ><h1><b>15</b></h1></th>
                     <th ><h1><b>-5000</b></h1></th>
-                    <th ><h1><b>0.55</b></h1></th>
+                    <th ><h1><b>55</b></h1></th>
                     <th ><span id="a3">Belum Menjawab</span></th>
                     <th>
                         <button class="btn btn-success btn-sm btn-block j3" onclick="submission( <?php echo $this->session->userdata('id_user');?>,2,3,2,1)">Jual Saham</button>

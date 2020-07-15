@@ -14,7 +14,16 @@
   <div class="card card-body">
   <h3><b>Pengujian Suku Bunga LPS</b></h3>
         <legend>informasi</legend>
-        <h4>Data yang tersaji adalah data hasil pengambilan keputusan kelompok B, berkaitan dengan perubahan suku bunga LPS</h4>
+        <h4>
+          <ul>
+              <li>
+                Data yang tersaji adalah data hasil pengambilan keputusan kelompok Bank berkaitan dengan perubahan suku bunga LPS 
+              </li>
+              <li>
+                Setiap kenaikan suku bunga LPS, simpanan nasabah terjamin dan bank tidak mengalami kesulitan likuiditas
+              </li>
+          </ul>
+        </h4>
         <legend>Petunjuk</legend>
         <h4>Untuk setiap data yang tersaji, Anda diminta untuk mengambil keputusan dengan menekan tombol:
             <ul>
@@ -137,7 +146,16 @@
       <div class="modal-body">
         <h3><b>Pengujian Suku Bunga LPS</b></h3>
         <legend>informasi</legend>
-        <h4>Data yang tersaji adalah data hasil pengambilan keputusan kelompok B, berkaitan dengan perubahan suku bunga LPS</h4>
+        <h4>
+          <ul>
+              <li>
+                Data yang tersaji adalah data hasil pengambilan keputusan kelompok Bank berkaitan dengan perubahan suku bunga LPS 
+              </li>
+              <li>
+                Setiap kenaikan suku bunga LPS, simpanan nasabah terjamin dan bank tidak mengalami kesulitan likuiditas
+              </li>
+          </ul>
+        </h4>
         <legend>Petunjuk</legend>
         <h4>Untuk setiap data yang tersaji, Anda diminta untuk mengambil keputusan dengan menekan tombol:
             <ul>

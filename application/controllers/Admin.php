@@ -17,16 +17,23 @@ class Admin extends CI_Controller
     public function index()
     {
         $data['page']='eks_saham';
+        $data['saham']=$this->admin_model->getFinalSaham();
         $this->load->view('templates/header',$data);
-        $this->load->view('admin/eksperimen_saham');
+        $this->load->view('admin/eksperimen_saham',$data);
         $this->load->view('templates/footer');
+    }
+
+    public function showFinal()
+    {
+        echo json_encode($this->admin_model->getFinalSaham());
     }
 
     public function eks_bank()
     {
         $data['page']='eks_bank';
+        $data['bank']=$this->admin_model->getFinalBank();
         $this->load->view('templates/header',$data);
-        $this->load->view('admin/eksperimen_bank');
+        $this->load->view('admin/eksperimen_bank',$data);
         $this->load->view('templates/footer');
     }
 

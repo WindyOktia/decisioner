@@ -17,7 +17,7 @@ class Export extends CI_Controller {
     public function export(){ 
         //membuat objek
         $objPHPExcel = new PHPExcel();
-        $data = $this->db->query('select * from eks_saham');
+        $data = $this->db->query('select eks_saham.*, user.access_code,user.role from eks_saham, user where eks_saham.id_user=user.id_user');
          // Nama Field Baris Pertama
         $fields = $data->list_fields();
         
@@ -51,7 +51,7 @@ class Export extends CI_Controller {
 
         // Add some data to the second sheet, resembling some different data types
         $objPHPExcel->setActiveSheetIndex(1);
-        $data2 = $this->db->query('select * from eks_bank');
+        $data2 = $this->db->query('select eks_bank.*, user.access_code,user.role from eks_bank, user where eks_bank.id_user=user.id_user');
         $fields2 = $data2->list_fields();
         $col2 = 0;
         foreach ($fields2 as $field2)

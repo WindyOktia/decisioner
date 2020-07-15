@@ -218,7 +218,7 @@
     $(function(){
         function refreshVal2(){
         $.ajax({
-            url: '<?= base_url('data/randBank')?>'
+            url: '<?= base_url('data/randBankFalse')?>'
             }).done(function(resultsd) {
                 var obj = JSON.parse(resultsd);
                 val1s=obj.big;

@@ -205,7 +205,8 @@
             url: '<?= base_url('data/getCountSaham')?>/<?php echo $this->session->userdata('session');?>'
             }).done(function(refresh) {
                 var isi = JSON.parse(refresh);
-                if(isi[0].jml_user==set_res){
+                // if(isi[0].jml_user==set_res){
+                if(isi[0].jml_user!=0){
                     $("#anu").val('anu');
                     $("#status").removeClass("alert-danger");
                     $("#status").addClass("alert-success");
